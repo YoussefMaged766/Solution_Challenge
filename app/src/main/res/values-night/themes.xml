@@ -14,7 +14,7 @@
         <!-- Customize your theme here. -->
     </style>
     <style name="floating_arrows" parent="Theme.MaterialComponents">
-        <item name="backgroundTint">#121212 </item>
+        <item name="backgroundTint">#121212</item>
         <item name="tint">@color/white</item>
     </style>
 </resources>
