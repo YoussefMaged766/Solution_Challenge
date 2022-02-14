@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SolutionChallenge">
         <activity
+            android:name=".signin_Activity"
+            android:exported="false" />
+        <activity
             android:name=".IntroSliding_Activity"
             android:exported="true">
             <intent-filter>
