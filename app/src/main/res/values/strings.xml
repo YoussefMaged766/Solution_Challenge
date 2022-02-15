@@ -4,4 +4,12 @@
     <string name="Create_account">Create account</string>
     <string name="google">Sign up with google</string>
     <string name="facebook">Sign up with Facebook</string>
+    <string name="name_hint">Full name</string>
+    <string name="e_mail_hint">E-mail</string>
+    <string name="password_hint">Password</string>
+    <string name="skip">Skip</string>
+    <string name="create_account">Create account</string>
+    <string name="aleardy_have_an_account">Aleardy have an account ?</string>
+    <string name="login">Login</string>
+    <string name="or">Or</string>
 </resources>
