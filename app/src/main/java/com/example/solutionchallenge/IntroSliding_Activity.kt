@@ -45,7 +45,7 @@ class IntroSliding_Activity : AppCompatActivity() {
             if (viewPager.currentItem + 1 < adapter.itemCount) {
                 viewPager.currentItem +=1
             }else{
-                Intent(applicationContext, signin_Activity:: class.java).also {
+                Intent(applicationContext, Register_Activity:: class.java).also {
                     startActivity(it)
                 }
             }

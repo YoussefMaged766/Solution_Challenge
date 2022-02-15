@@ -3,14 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/AndroidStudioProjects/Solution_Challenge/app/src/main/res/drawable/active.xml" value="0.121" />
-        <entry key="..\:/AndroidStudioProjects/Solution_Challenge/app/src/main/res/drawable/inactive.xml" value="0.121" />
-        <entry key="..\:/AndroidStudioProjects/Solution_Challenge/app/src/main/res/drawable/indictor_style.xml" value="0.121" />
-        <entry key="..\:/AndroidStudioProjects/Solution_Challenge/app/src/main/res/layout/activity_intro_sliding.xml" value="0.10989583333333333" />
+        <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/drawable/active.xml" value="0.1425" />
+        <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/drawable/ic_arrow_left_24.xml" value="0.148" />
+        <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/drawable/ic_arrow_right_24.xml" value="0.1425" />
+        <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/drawable/inactive.xml" value="0.1425" />
+        <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/drawable/indictor_style.xml" value="0.148" />
+        <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/drawable/view_style.xml" value="0.135" />
+        <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/font/font.xml" value="0.15677083333333333" />
+        <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/activity_intro_sliding.xml" value="0.2604166666666667" />
+        <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/activity_main.xml" value="0.27447916666666666" />
+        <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/activity_register.xml" value="0.264" />
+        <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/activity_splash_screen.xml" value="0.27447916666666666" />
+        <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/sliding_item.xml" value="0.27447916666666666" />
         <entry key="..\:/AndroidStudioProjects/Solution_Challenge/app/src/main/res/layout/activity_main.xml" value="0.10989583333333333" />
-        <entry key="..\:/AndroidStudioProjects/Solution_Challenge/app/src/main/res/layout/activity_signin.xml" value="0.10989583333333333" />
-        <entry key="..\:/AndroidStudioProjects/Solution_Challenge/app/src/main/res/layout/activity_splash_screen.xml" value="0.176" />
-        <entry key="..\:/AndroidStudioProjects/Solution_Challenge/app/src/main/res/layout/sliding_item.xml" value="0.10989583333333333" />
       </map>
     </option>
   </component>

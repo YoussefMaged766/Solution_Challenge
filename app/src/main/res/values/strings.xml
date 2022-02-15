@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">solution challenge</string>
+    <string name="fitness">Fitness Plan</string>
+    <string name="Create_account">Create account</string>
+    <string name="google">Sign up with google</string>
+    <string name="facebook">Sign up with Facebook</string>
 </resources>
