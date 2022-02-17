@@ -37,6 +37,19 @@ class IntroSliding_Activity : AppCompatActivity() {
         initallize()
         indicators()
         setCurrentIndicators(0)
+        operations()
+
+
+    }
+
+    fun initallize(){
+         viewPager  = findViewById(R.id.viewpager_intro)
+        indicator_container = findViewById(R.id.indicator_container)
+        btn_right=findViewById(R.id.floating_right_btn)
+        btn_left=findViewById(R.id.floating_left_btn)
+    }
+
+    fun operations(){
         viewPager.adapter=adapter
         prefrence = getSharedPreferences("IntroSlider" , Context.MODE_PRIVATE)
         if (!prefrence.getBoolean(pref_show_intro,true)){
@@ -62,16 +75,8 @@ class IntroSliding_Activity : AppCompatActivity() {
             }
         }
         btn_left.setOnClickListener {
-                viewPager.currentItem -=1
+            viewPager.currentItem -=1
         }
-
-    }
-
-    fun initallize(){
-         viewPager  = findViewById(R.id.viewpager_intro)
-        indicator_container = findViewById(R.id.indicator_container)
-        btn_right=findViewById(R.id.floating_right_btn)
-        btn_left=findViewById(R.id.floating_left_btn)
     }
 
     fun indicators(){
