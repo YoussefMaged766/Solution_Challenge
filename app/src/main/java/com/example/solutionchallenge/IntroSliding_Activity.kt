@@ -2,6 +2,7 @@ package com.example.solutionchallenge
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -21,6 +22,8 @@ class IntroSliding_Activity : AppCompatActivity() {
     lateinit var  indicator_container :LinearLayout
     lateinit var btn_right :FloatingActionButton
     lateinit var btn_left :FloatingActionButton
+    lateinit var prefrence :SharedPreferences
+    var pref_show_intro = "Intro"
 
     var adapter=intro_adapter (listOf(
         data_intro("Choose a customized diet for you", R.drawable.imgintro2),
@@ -31,10 +34,15 @@ class IntroSliding_Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_intro_sliding)
-       initallize()
+        initallize()
         indicators()
         setCurrentIndicators(0)
         viewPager.adapter=adapter
+        prefrence = getSharedPreferences("IntroSlider" , Context.MODE_PRIVATE)
+        if (!prefrence.getBoolean(pref_show_intro,true)){
+            startActivity( Intent(applicationContext, Register_Activity:: class.java))
+            finish()
+        }
         viewPager.registerOnPageChangeCallback(object :ViewPager2.OnPageChangeCallback(){
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
@@ -47,6 +55,9 @@ class IntroSliding_Activity : AppCompatActivity() {
             }else{
                 Intent(applicationContext, Register_Activity:: class.java).also {
                     startActivity(it)
+                    val editor = prefrence.edit()
+                    editor.putBoolean(pref_show_intro,false)
+                    editor.apply()
                 }
             }
         }

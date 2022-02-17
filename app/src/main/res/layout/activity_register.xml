@@ -26,14 +26,15 @@
         android:layout_marginTop="20dp"
         android:textSize="50sp"
         android:letterSpacing=".1"
+        android:visibility="gone"
 
         />
 
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:adjustViewBounds="true"
-        android:src="@drawable/app_icon_01"
+        android:src="@drawable/acoins_04"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
