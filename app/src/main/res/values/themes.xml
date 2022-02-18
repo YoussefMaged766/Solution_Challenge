@@ -20,4 +20,13 @@
         <item name="tint">@color/black</item>
 
     </style>
+    <style name="floating_camera" parent="Theme.MaterialComponents">
+        <item name="backgroundTint">@color/intro_color </item>
+        <item name="tint">@color/white</item>
+
+    </style>
+    <style name="CircularDeterminateProgressBar">
+        <item name="android:indeterminateOnly">false </item>
+        <item name="android:progressDrawable">@drawable/circular_progress_bar</item>
+    </style>
 </resources>
