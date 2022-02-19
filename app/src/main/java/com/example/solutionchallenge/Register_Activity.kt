@@ -53,6 +53,7 @@ class Register_Activity : AppCompatActivity() {
 
                 if (it.isSuccessful){
                   sendEmailVerification()
+                    send_data_firebase()
                     startActivity(Intent(this, UserProfile_Activity::class.java))
                     finish()
                 }else{
@@ -60,6 +61,7 @@ class Register_Activity : AppCompatActivity() {
 
                 }
             }
+
 
 
         }
@@ -82,6 +84,12 @@ class Register_Activity : AppCompatActivity() {
             startActivity(Intent(this, UserProfile_Activity::class.java))
             Toast.makeText(applicationContext , "welcome back",Toast.LENGTH_SHORT).show()
         }
+    }
+    fun send_data_firebase(){
+        val userId= auth.uid
+        database.child("users").child(userId.toString()).child("email").setValue(txtemail.text.toString())
+
+
     }
 
 }
