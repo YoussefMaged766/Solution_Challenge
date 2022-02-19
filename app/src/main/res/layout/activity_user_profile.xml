@@ -235,28 +235,27 @@
                                 android:id="@+id/textview_age"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:fontFamily="@font/tahoma_regular"
-                                android:text="Age"
+                                android:layout_gravity="center"
                                 android:layout_weight="1"
+                                android:fontFamily="@font/tahoma_regular"
+                                android:gravity="center"
+                                android:text="Age"
                                 android:textColor="@color/white"
-                                android:textSize="15sp"
-                                android:layout_gravity="center_vertical"
-                                android:gravity="center_vertical"
-                                />
+                                android:textSize="15sp" />
 
                             <TextView
-                                android:id="@+id/textview_age2"
-                                android:layout_width="wrap_content"
+                                android:id="@+id/textview_age_edit"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="20dp"
-                                android:text="15"
-                                android:textSize="15sp"
-                                android:textColor="@color/white"
-                                android:fontFamily="@font/tahoma_regular"
+                                android:layout_weight="3"
                                 android:background="@drawable/profile_style"
+                                android:fontFamily="@font/tahoma_regular"
                                 android:padding="8dp"
-
-                                />
+                                tools:text="15"
+                                android:textColor="@color/white"
+                                android:textSize="15sp"
+                                app:drawableEndCompat="@drawable/ic_baseline_edit_24" />
 
 
 
@@ -274,26 +273,27 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
 
-                                android:fontFamily="@font/tahoma_regular"
+                                android:layout_gravity="center_horizontal"
                                 android:layout_weight="1"
+                                android:fontFamily="@font/tahoma_regular"
+                                android:gravity="center"
                                 android:text="Tall"
                                 android:textColor="@color/white"
-                                android:textSize="20sp"
-                                android:layout_gravity="center_horizontal"
-                                android:gravity="center_vertical"
-                                />
+                                android:textSize="20sp" />
+
                             <TextView
-                                android:id="@+id/textview_tall2"
-                                android:layout_width="wrap_content"
+                                android:id="@+id/textview_tall_edit"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:text="15"
                                 android:layout_margin="20dp"
-                                android:textSize="15sp"
-                                android:textColor="@color/white"
-                                android:fontFamily="@font/tahoma_regular"
+                                android:layout_weight="3"
                                 android:background="@drawable/profile_style"
+                                android:fontFamily="@font/tahoma_regular"
                                 android:padding="8dp"
-                                />
+                                tools:text="15"
+                                android:textColor="@color/white"
+                                android:textSize="15sp"
+                                app:drawableEndCompat="@drawable/ic_baseline_edit_24" />
 
                         </LinearLayout>
 
@@ -307,26 +307,26 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_gravity="center_horizontal"
-                                android:gravity="center_vertical"
                                 android:layout_weight="1"
                                 android:fontFamily="@font/tahoma_regular"
+                                android:gravity="center"
                                 android:text="Weight"
                                 android:textColor="@color/white"
-                                android:textSize="15sp"
-                                />
+                                android:textSize="15sp" />
 
                             <TextView
-                                android:id="@+id/textview_weight2"
-                                android:layout_width="wrap_content"
+                                android:id="@+id/textview_weight_edit"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="20dp"
-                                android:text="15"
-                                android:textSize="15sp"
-                                android:textColor="@color/white"
-                                android:fontFamily="@font/tahoma_regular"
+                                android:layout_weight="3"
                                 android:background="@drawable/profile_style"
+                                android:fontFamily="@font/tahoma_regular"
                                 android:padding="8dp"
-                                />
+                                tools:text="15"
+                                android:textColor="@color/white"
+                                android:textSize="15sp"
+                                app:drawableEndCompat="@drawable/ic_baseline_edit_24" />
 
                         </LinearLayout>
                         <LinearLayout
@@ -337,27 +337,33 @@
                             <TextView
                                 android:id="@+id/textview_account"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/tahoma_regular"
-                                android:text="Account"
-                                android:layout_weight="1"
-                                android:textColor="@color/white"
-                                android:textSize="15sp"
-
+                                android:layout_height="match_parent"
                                 android:layout_gravity="center_vertical"
-                                />
+                                android:layout_weight="1"
+                                android:fontFamily="@font/tahoma_regular"
+                                android:gravity="center"
+                                android:text="Account"
+
+                                android:textColor="@color/white"
+                                android:textSize="15sp" />
+
                             <TextView
-                                android:id="@+id/textview_account2"
-                                android:layout_width="wrap_content"
+                                android:id="@+id/textview_account_edit"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="20dp"
-                                android:text="15"
-                                android:textSize="15sp"
-                                android:textColor="@color/white"
-                                android:fontFamily="@font/tahoma_regular"
+                                android:layout_weight="3"
                                 android:background="@drawable/profile_style"
+                                android:fontFamily="@font/tahoma_regular"
                                 android:padding="8dp"
-                                />
+                                tools:text="yoer766@gmail.com"
+                                android:textColor="@color/white"
+                                android:textSize="15sp"
+                                android:inputType="textEmailAddress"
+                                app:drawableEndCompat="@drawable/ic_baseline_edit_24"
+                                 />
+
+
 
                         </LinearLayout>
 
