@@ -5,15 +5,14 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
 import androidx.core.view.get
 import androidx.viewpager2.widget.ViewPager2
 import com.example.solutionchallenge.adapter.intro_adapter
+import com.example.solutionchallenge.classes.data_intro
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class IntroSliding_Activity : AppCompatActivity() {

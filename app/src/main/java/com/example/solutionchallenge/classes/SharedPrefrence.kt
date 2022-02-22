@@ -1,4 +1,4 @@
-package com.example.solutionchallenge
+package com.example.solutionchallenge.classes
 
 import android.content.Context
 import android.content.SharedPreferences

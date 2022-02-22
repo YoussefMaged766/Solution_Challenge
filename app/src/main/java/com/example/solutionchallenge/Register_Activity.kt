@@ -81,7 +81,7 @@ class Register_Activity : AppCompatActivity() {
         val user: FirebaseUser? = auth.currentUser
         Log.e("user", auth.currentUser.toString())
         user?.let {
-            startActivity(Intent(this, UserProfile_Activity::class.java))
+            startActivity(Intent(this, SystemInfo_Activity::class.java))
             Toast.makeText(applicationContext , "welcome back",Toast.LENGTH_SHORT).show()
         }
     }
