@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SolutionChallenge">
         <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".SystemInfo_Activity"
             android:exported="false" />
         <activity
@@ -36,10 +39,10 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".IntroSliding_Activity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

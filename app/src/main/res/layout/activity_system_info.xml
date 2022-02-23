@@ -7,10 +7,21 @@
     tools:context=".SystemInfo_Activity">
     <ImageView
         android:id="@+id/img_systemInfo"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="300dp"
         app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/app_icon_03"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/img_systemInfo2"
+        android:src="@drawable/fat"
+        />
+    <ImageView
+        android:id="@+id/img_systemInfo2"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        app:layout_constraintStart_toEndOf="@id/img_systemInfo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/fit"
         />
     <LinearLayout
         android:id="@+id/container2"

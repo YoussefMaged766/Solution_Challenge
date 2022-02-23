@@ -22,6 +22,7 @@ class Register_Activity : AppCompatActivity() {
     lateinit var create_btn:Button
     lateinit var txtemail :EditText
     lateinit var txtpassword:EditText
+    lateinit var txtname:EditText
     private lateinit var auth: FirebaseAuth
     private lateinit var database: DatabaseReference
 
@@ -40,6 +41,7 @@ class Register_Activity : AppCompatActivity() {
         create_btn = findViewById(R.id.btn_createAccount)
         txtemail = findViewById(R.id.txt_email)
         txtpassword = findViewById(R.id.txt_password)
+        txtname = findViewById(R.id.txt_name)
 
 
 
@@ -48,13 +50,14 @@ class Register_Activity : AppCompatActivity() {
 
             val userEmail  = txtemail.text.toString().trim()
             val userPassword = txtpassword.text.toString().trim()
+            val name = txtname.text.toString()
 
             auth.createUserWithEmailAndPassword(userEmail, userPassword).addOnCompleteListener{
 
                 if (it.isSuccessful){
                   sendEmailVerification()
                     send_data_firebase()
-                    startActivity(Intent(this, UserProfile_Activity::class.java))
+                    startActivity(Intent(this, HomeActivity::class.java))
                     finish()
                 }else{
                     Toast.makeText(this ,"failed" + it.exception,Toast.LENGTH_SHORT).show()
@@ -81,13 +84,16 @@ class Register_Activity : AppCompatActivity() {
         val user: FirebaseUser? = auth.currentUser
         Log.e("user", auth.currentUser.toString())
         user?.let {
-            startActivity(Intent(this, SystemInfo_Activity::class.java))
+            startActivity(Intent(this, HomeActivity::class.java))
+            finish()
             Toast.makeText(applicationContext , "welcome back",Toast.LENGTH_SHORT).show()
         }
     }
     fun send_data_firebase(){
         val userId= auth.uid
+        val name = txtname.text.toString()
         database.child("users").child(userId.toString()).child("email").setValue(txtemail.text.toString())
+        database.child("users").child(userId.toString()).child("name").setValue(name)
 
 
     }
