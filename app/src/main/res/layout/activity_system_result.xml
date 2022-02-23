@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SystemResult_Activity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/img_title_result"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/istockphoto1"
+                    android:scaleType="fitXY"
+                    android:adjustViewBounds="true"/>
+
+                <TextView
+                    android:id="@+id/txt_diet_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/img_title_result"
+                    android:textSize="35sp"
+                    android:textColor="@color/black"
+                    android:text="Keto diet"
+                    android:fontFamily="@font/georgia"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"/>
+                <TextView
+                    android:id="@+id/txt7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/txt_diet_result"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="Duration : "
+                    android:fontFamily="@font/tahoma_regular"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp"/>
+                <TextView
+                    android:id="@+id/txt_duration_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@id/txt7"
+                    app:layout_constraintTop_toTopOf="@id/txt7"
+                    android:layout_marginStart="10dp"
+                    android:text="3 months"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/tahoma_bold"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/txt_Nutration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/txt7"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:textColor="@color/black"
+                    android:text="Nutration : "
+                    android:textSize="20sp"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/tahoma_regular"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_Nutration"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btn_add_nutration"
+                    app:layout_constraintTop_toBottomOf="@id/txt_Nutration"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="horizontal"
+
+                    tools:listitem="@layout/nutration_item_list"/>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btn_add_nutration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/recycler_Nutration"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/recycler_Nutration"
+                    android:backgroundTint="#fe8312"
+                    android:src="@drawable/ic_baseline_add_24"
+                    app:fabCustomSize="30sp"
+                    app:tint="@color/white"
+                    app:borderWidth="0dp"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_Exercises"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/recycler_Nutration"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:textColor="@color/black"
+                    android:text="Exercises : "
+                    android:textSize="20sp"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/tahoma_regular"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_Exercises"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btn_add_nutration"
+                    app:layout_constraintTop_toBottomOf="@id/txt_Exercises"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="horizontal"
+
+                    tools:listitem="@layout/nutration_item_list"/>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btn_add_Exercises"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/recycler_Exercises"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/recycler_Exercises"
+                    android:backgroundTint="#fe8312"
+                    android:src="@drawable/ic_baseline_add_24"
+                    app:fabCustomSize="30sp"
+                    app:tint="@color/white"
+                    app:borderWidth="0dp"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_getStarted"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/recycler_Exercises"
+                    android:backgroundTint="#fe8312"
+                    android:text="Get Started"
+                    android:textAllCaps="false"
+                    android:paddingHorizontal="50dp"
+                    android:paddingVertical="12dp"
+                    app:cornerRadius="10dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/georgia"
+                    android:textColor="@color/white"/>
+
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

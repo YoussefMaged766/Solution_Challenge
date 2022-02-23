@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SolutionChallenge">
         <activity
+            android:name=".SystemResult_Activity"
+            android:exported="false" />
+        <activity
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
