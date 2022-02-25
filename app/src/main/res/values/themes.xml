@@ -15,18 +15,36 @@
         <item name="android:windowFullscreen">true</item>
 
     </style>
+
     <style name="floating_arrows" parent="Theme.MaterialComponents">
-        <item name="backgroundTint">@color/white </item>
+        <item name="backgroundTint">@color/white</item>
         <item name="tint">@color/black</item>
 
     </style>
+
     <style name="floating_camera" parent="Theme.MaterialComponents">
-        <item name="backgroundTint">@color/intro_color </item>
+        <item name="backgroundTint">@color/intro_color</item>
         <item name="tint">@color/white</item>
 
     </style>
+
     <style name="CircularDeterminateProgressBar">
-        <item name="android:indeterminateOnly">false </item>
+        <item name="android:indeterminateOnly">false</item>
         <item name="android:progressDrawable">@drawable/circular_progress_bar</item>
     </style>
+
+    <style name="CustomActionBar" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:windowActionBarOverlay">true</item>
+        <!-- Support library compatibility -->
+        <item name="windowActionBarOverlay">true</item>
+    </style>
+
+    <style name="Theme.SolutionChallenge.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.SolutionChallenge.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.SolutionChallenge.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

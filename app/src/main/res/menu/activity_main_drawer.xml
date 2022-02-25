@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/icon_diet"
+            android:title="My diet"
+            android:iconTint="@color/white"/>
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/icon_dark_mode"
+            android:title="Night mode" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/icon_settings"
+            android:title="Settings" />
+        <item
+            android:id="@+id/nav_Exit"
+            android:icon="@drawable/icon_exit"
+            android:title="Exit" />
+    </group>
+</menu>
