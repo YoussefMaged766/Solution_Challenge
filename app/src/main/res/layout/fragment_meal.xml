@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.gallery.GalleryFragment"
-    android:background="@color/intro_color">
+    tools:context=".ui.slideshow.MealFragment">
 
     <TextView
-        android:id="@+id/text_gallery"
+        android:id="@+id/text_slideshow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -21,5 +20,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:textColor="@color/black"
-       />
+        android:text="slide"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

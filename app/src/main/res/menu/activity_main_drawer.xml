@@ -5,16 +5,16 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/nav_Diet"
             android:icon="@drawable/icon_diet"
             android:title="My diet"
             android:iconTint="@color/white"/>
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_dark"
             android:icon="@drawable/icon_dark_mode"
             android:title="Night mode" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_setting"
             android:icon="@drawable/icon_settings"
             android:title="Settings" />
         <item

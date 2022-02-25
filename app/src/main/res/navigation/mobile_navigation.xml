@@ -12,21 +12,21 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.solutionchallenge.ui.gallery.GalleryFragment"
+        android:id="@+id/nav_Exercise"
+        android:name="com.example.solutionchallenge.ui.gallery.ExersiesFragment"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_exersiese" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.solutionchallenge.ui.slideshow.SlideshowFragment"
+        android:id="@+id/nav_meal"
+        android:name="com.example.solutionchallenge.ui.slideshow.MealFragment"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_meal" />
 
     <fragment
-    android:id="@+id/nav_Exit"
-    android:name="com.example.solutionchallenge.Exit_Fragment"
-    android:label="@string/menu_slideshow"
-    tools:layout="@layout/fragment_exit_" />
+        android:id="@+id/nav_profile"
+        android:name="com.example.solutionchallenge.Exit_Fragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_profile" />
 
 </navigation>

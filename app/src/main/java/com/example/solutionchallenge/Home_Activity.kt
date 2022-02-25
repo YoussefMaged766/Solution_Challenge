@@ -38,32 +38,32 @@ class Home_Activity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,R.id.nav_Exit
+                R.id.nav_home, R.id.nav_dark, R.id.nav_Diet,R.id.nav_Exit
             ), drawerLayout
         )
         NavigationUI.setupActionBarWithNavController(this,navController,drawerLayout)
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-//        binding.navViewBot.setupWithNavController(navController)
-        binding.navViewBot.setOnNavigationItemSelectedListener(navigationItemSelectedListener)
+      binding.navViewBot.setupWithNavController(navController)
+//        binding.navViewBot.setOnNavigationItemSelectedListener(navigationItemSelectedListener)
     }
 
-    var navigationItemSelectedListener =
-        BottomNavigationView.OnNavigationItemSelectedListener { item ->
-
-
-            when (item.itemId) {
-
-                    R.id.nav_Exercise ->findNavController(R.id.nav_host_fragment_content_home).navigate(R.id.nav_gallery)
-                 R.id.nav_meal -> findNavController(R.id.nav_host_fragment_content_home).navigate(R.id.nav_Exit)
-
-                R.id.nav_profile -> findNavController(R.id.nav_host_fragment_content_home).navigate(R.id.nav_slideshow)
-
-        }
-
-            true
-        }
+//    var navigationItemSelectedListener =
+//        BottomNavigationView.OnNavigationItemSelectedListener { item ->
+//
+//
+//            when (item.itemId) {
+//
+//                 R.id.nav_Exercise ->findNavController(R.id.nav_host_fragment_content_home).navigate(R.id.nav_Exercise)
+//                 R.id.nav_meal -> findNavController(R.id.nav_host_fragment_content_home).navigate(R.id.nav_meal)
+//                R.id.nav_profile -> findNavController(R.id.nav_host_fragment_content_home).navigate(R.id.nav_profile)
+//                R.id.nav_home -> findNavController(R.id.nav_host_fragment_content_home).navigate(R.id.nav_home)
+//
+//        }
+//
+//            true
+//        }
 
 
 

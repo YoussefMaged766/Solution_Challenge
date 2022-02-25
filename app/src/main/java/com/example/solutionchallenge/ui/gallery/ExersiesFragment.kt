@@ -6,11 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.example.solutionchallenge.R
-import com.example.solutionchallenge.databinding.FragmentGalleryBinding
 
-class GalleryFragment : Fragment() {
+class ExersiesFragment : Fragment() {
 
 lateinit var text:TextView
     override fun onCreateView(
@@ -18,7 +16,7 @@ lateinit var text:TextView
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val view :View=inflater.inflate(R.layout.fragment_gallery,container,false)
+        val view :View=inflater.inflate(R.layout.fragment_exersiese,container,false)
 
         text = view.findViewById(R.id.text_gallery)
         text.text = "gallery"
