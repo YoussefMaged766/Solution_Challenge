@@ -10,7 +10,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:elevation="0dp"
-    android:backgroundTint="#00FFFFFF"
+    android:background="@color/intro_color"
+    android:theme="@style/ToolbarTheme"
   >
 
         <androidx.appcompat.widget.Toolbar
@@ -18,9 +19,8 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:popupTheme="@style/Theme.SolutionChallenge.PopupOverlay"
-            android:backgroundTint="#00FFFFFF"
-           app:titleTextColor="@color/white"
 
+            app:titleTextColor="@color/white"
 
            />
 

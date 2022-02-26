@@ -1,5 +1,7 @@
 package com.example.solutionchallenge
 
+import android.graphics.Color
+import android.graphics.PorterDuff
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -27,7 +29,7 @@ class Home_Activity : AppCompatActivity() {
         binding = ActivityHome2Binding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.appBarHome.toolbar)
-
+        binding.appBarHome.toolbar.getNavigationIcon()?.setColorFilter(Color.WHITE, PorterDuff.Mode.MULTIPLY);
 
 
 
@@ -46,6 +48,7 @@ class Home_Activity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
       binding.navViewBot.setupWithNavController(navController)
+
 //        binding.navViewBot.setOnNavigationItemSelectedListener(navigationItemSelectedListener)
     }
 

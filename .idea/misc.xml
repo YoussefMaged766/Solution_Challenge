@@ -3,15 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/drawable-v24/exersise_selected.xml" value="0.129" />
+        <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/drawable-v24/home_selected.xml" value="0.129" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.135" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/drawable/active.xml" value="0.1425" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/drawable/circular_progress_bar.xml" value="0.1455" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/drawable/circular_shape.xml" value="0.1385" />
+        <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/drawable/home_selected.xml" value="0.129" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/drawable/ic_arrow_left_24.xml" value="0.148" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/drawable/ic_arrow_right_24.xml" value="0.1425" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/drawable/ic_baseline_arrow_drop_down_24.xml" value="0.129" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/drawable/inactive.xml" value="0.1425" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/drawable/indictor_style.xml" value="0.148" />
+        <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/drawable/meal_selected.xml" value="0.129" />
+        <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/drawable/profile_selected.xml" value="0.129" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/drawable/profile_style.xml" value="0.1265" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/drawable/side_nav_bar.xml" value="0.129" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/drawable/spinner_style.xml" value="0.129" />
