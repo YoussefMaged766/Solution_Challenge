@@ -45,6 +45,7 @@ class Home_Activity : AppCompatActivity() {
         )
         NavigationUI.setupActionBarWithNavController(this,navController,drawerLayout)
 
+
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
       binding.navViewBot.setupWithNavController(navController)
