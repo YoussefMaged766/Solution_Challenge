@@ -105,7 +105,7 @@
         android:orientation="horizontal"
         android:layout_marginTop="10dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintEnd_toStartOf="@id/btn_add_nutration"
+        app:layout_constraintEnd_toStartOf="@id/btn_add_meals"
         app:layout_constraintStart_toEndOf="@id/btn_add_meals_left"
         app:layout_constraintTop_toBottomOf="@id/txt_meals_home"
         tools:listitem="@layout/nutration_item_list"
@@ -113,7 +113,7 @@
         />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btn_add_nutration"
+        android:id="@+id/btn_add_meals"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#fff"
@@ -188,7 +188,7 @@
         android:layout_marginTop="10dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/btn_add_nutration"
+        app:layout_constraintEnd_toStartOf="@id/btn_add_meals"
         app:layout_constraintTop_toBottomOf="@id/txt_Exercises"
         app:layout_constraintStart_toEndOf="@id/btn_add_Exercises_left"
         tools:listitem="@layout/nutration_item_list" />

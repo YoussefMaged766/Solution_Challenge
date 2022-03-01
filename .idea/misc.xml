@@ -13,6 +13,7 @@
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/drawable/ic_arrow_left_24.xml" value="0.148" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/drawable/ic_arrow_right_24.xml" value="0.1425" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/drawable/ic_baseline_arrow_drop_down_24.xml" value="0.129" />
+        <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.129" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/drawable/inactive.xml" value="0.1425" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/drawable/indictor_style.xml" value="0.148" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/drawable/meal_selected.xml" value="0.129" />
@@ -37,6 +38,7 @@
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/app_bar_home.xml" value="0.22530996152201796" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/content_home.xml" value="0.22530996152201796" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/custom_dialog.xml" value="0.22530996152201796" />
+        <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/fragment_diet.xml" value="0.22530996152201796" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/fragment_exersiese.xml" value="0.11011282908483076" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/fragment_exit_.xml" value="0.22530996152201796" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/fragment_gallery.xml" value="0.22530996152201796" />

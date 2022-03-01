@@ -177,7 +177,7 @@ class UserProfile_Activity : AppCompatActivity() {
 
     companion object {
         private val IMAGE_CHOOSE = 1000;
-        private val PERMISSION_CODE = 1001
+        val PERMISSION_CODE = 1001
 
     }
 
