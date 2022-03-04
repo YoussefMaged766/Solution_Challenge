@@ -49,20 +49,14 @@ lateinit var btn_result : Button
             startActivity(i)
 
         }
-        btn_result.setOnClickListener {
 
-
-            var i =Intent(this , SystemResult_Activity::class.java)
-            startActivity(i)
-
-        }
 
     }
     fun initialize(){
         spinner  = findViewById(R.id.spinner_disease)
         btn_submit = findViewById(R.id.btn_submit_system)
         txt_tall = findViewById(R.id.tall_edit_system)
-        btn_result = findViewById(R.id.btn_submit_system_result)
+
 
     }
 }

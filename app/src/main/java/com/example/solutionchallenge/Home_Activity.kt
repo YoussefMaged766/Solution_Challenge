@@ -39,6 +39,7 @@ class Home_Activity : AppCompatActivity() {
 //        binding2 = NavHeaderHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         setSupportActionBar(binding.appBarHome.toolbar)
         database = FirebaseDatabase.getInstance().reference
         auth = FirebaseAuth.getInstance()

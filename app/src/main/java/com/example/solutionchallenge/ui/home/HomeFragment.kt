@@ -5,36 +5,30 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.PagerSnapHelper
-import androidx.recyclerview.widget.RecyclerView
 import com.example.solutionchallenge.R
 import com.example.solutionchallenge.SystemInfo_Activity
 import com.example.solutionchallenge.adapter.Nutration_adapter
 import com.example.solutionchallenge.classes.Nutration_data
 import com.example.solutionchallenge.databinding.FragmentHomeBinding
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.example.solutionchallenge.ui.Exersies.ExersiesFragment
+import com.example.solutionchallenge.ui.meal.MealFragment
 
 class HomeFragment : Fragment() {
-    lateinit var recycler_Nutration: RecyclerView
-    lateinit var recyclerExercises: RecyclerView
+    lateinit var binding: FragmentHomeBinding
+
     lateinit var adapter_Nutration: Nutration_adapter
     lateinit var adapter_Exercises: Nutration_adapter
-    lateinit var rightbuttom_meals: FloatingActionButton
-    lateinit var btn_pick_plan: Button
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val v: View = inflater.inflate(R.layout.fragment_home, container, false)
-        recycler_Nutration = v.findViewById(R.id.recycler_meals)
-        recyclerExercises = v.findViewById(R.id.recycler_Exercises)
-        btn_pick_plan = v.findViewById(R.id.btn_pick_plan)
-        rightbuttom_meals = v.findViewById(R.id.btn_add_meals)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
 
 
 
@@ -61,25 +55,35 @@ class HomeFragment : Fragment() {
         )
 
         val SnapHelper = PagerSnapHelper()
-        SnapHelper.attachToRecyclerView(recycler_Nutration)
-
-        recycler_Nutration.adapter = adapter_Nutration
-        recyclerExercises.adapter = adapter_Exercises
+        SnapHelper.attachToRecyclerView(binding.recyclerMeals)
+        SnapHelper.attachToRecyclerView(binding.recyclerExercises)
 
 
+        binding.recyclerMeals.adapter = adapter_Nutration
+        binding.recyclerExercises.adapter = adapter_Exercises
 
-        btn_pick_plan.setOnClickListener {
 
 
-           var i =Intent(context, SystemInfo_Activity::class.java)
-
-            startActivity(i)
+        binding.btnPickPlan.setOnClickListener {
+            startActivity( Intent(context, SystemInfo_Activity::class.java))
         }
 
-        rightbuttom_meals.setOnClickListener {
+        binding.btnAddMeals.setOnClickListener {
 
-                    recycler_Nutration.smoothScrollToPosition(adapter_Nutration.itemCount - 1)
+            binding.recyclerMeals.smoothScrollToPosition(adapter_Nutration.itemCount - 1)
 
+        }
+        binding.txtSeemoreMeals.setOnClickListener {
+
+            val navHostFragment = activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_fragment_content_home) as NavHostFragment
+            val navController = navHostFragment.navController
+            navController.navigate(R.id.nav_meal)
+
+        }
+        binding.txtSeemoreExersise.setOnClickListener {
+            val navHostFragment = activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_fragment_content_home) as NavHostFragment
+            val navController = navHostFragment.navController
+            navController.navigate(R.id.nav_Exercise)
         }
 
 
@@ -98,7 +102,7 @@ class HomeFragment : Fragment() {
 
 
 
-        return v
+        return binding.root
     }
 
 }

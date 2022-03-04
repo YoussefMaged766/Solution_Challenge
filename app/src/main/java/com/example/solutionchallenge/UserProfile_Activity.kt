@@ -112,7 +112,7 @@ class UserProfile_Activity : AppCompatActivity() {
             editor.apply()
         }
         btn_back.setOnClickListener {
-            startActivity(Intent(applicationContext, HomeActivity::class.java))
+            startActivity(Intent(applicationContext, Home_Activity::class.java))
         }
 
 

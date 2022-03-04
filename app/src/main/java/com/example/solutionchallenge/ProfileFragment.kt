@@ -11,7 +11,6 @@ import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,6 +20,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.PermissionChecker
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import com.example.solutionchallenge.classes.Toast
 import com.example.solutionchallenge.databinding.FragmentProfileBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -38,6 +39,7 @@ class ProfileFragment : Fragment() {
     private val PREFS_NAME = "kotlincodes"
     lateinit var sharedPref: SharedPreferences
 
+
     lateinit var  binding: FragmentProfileBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,7 +56,14 @@ class ProfileFragment : Fragment() {
          binding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile, container, false)
 
         database = FirebaseDatabase.getInstance().reference
-       auth = FirebaseAuth.getInstance()
+        auth = FirebaseAuth.getInstance()
+
+
+       var frg: Fragment = requireActivity().getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment_content_home)!!
+        val ft: FragmentTransaction = requireActivity().getSupportFragmentManager().beginTransaction()
+        ft.detach(frg)
+        ft.attach(frg)
+        ft.commit()
 
 
 

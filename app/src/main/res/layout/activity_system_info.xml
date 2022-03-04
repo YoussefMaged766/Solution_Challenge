@@ -189,20 +189,7 @@
         android:paddingHorizontal="50dp"
         android:paddingVertical="15dp"
         android:fontFamily="@font/georgia_regular_font"/>
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_submit_system_result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/container2"
-        android:layout_marginTop="15dp"
-        android:text="result"
-        android:textAllCaps="false"
-        android:backgroundTint="#fe8312"
-        app:cornerRadius="10dp"
-        android:paddingHorizontal="50dp"
-        android:paddingVertical="15dp"
-        android:fontFamily="@font/georgia_regular_font"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

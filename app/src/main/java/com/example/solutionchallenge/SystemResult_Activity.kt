@@ -1,6 +1,7 @@
 package com.example.solutionchallenge
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
@@ -109,6 +110,10 @@ class SystemResult_Activity : AppCompatActivity() {
 
 //        recycler_Nutration.adapter = adapter_Nutration
 //        recycler_Nutration.adapter = adapter_Nutration
+
+        btn_start.setOnClickListener {
+            startActivity(Intent(this , TimerActivity::class.java))
+        }
     }
 
 
