@@ -7,13 +7,19 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.solutionchallenge.Timer.NotificationUtil
 import com.example.solutionchallenge.Timer.PrefUtil
 import com.example.solutionchallenge.Timer.TimerExpiredReceiver
 import com.example.solutionchallenge.databinding.ActivityTimerBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
 import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.ZoneOffset
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 
@@ -66,6 +72,10 @@ class TimerActivity : AppCompatActivity() {
     private var mEndTime: Long = 0
     private var firstTimeUsed = false
     lateinit var prefs:SharedPreferences
+    private lateinit var auth: FirebaseAuth
+    private lateinit var database: DatabaseReference
+    lateinit var couponexpires:String
+    var  diff :Long = 0
 
 
     lateinit var binding: ActivityTimerBinding
@@ -74,30 +84,88 @@ class TimerActivity : AppCompatActivity() {
         setContentView(R.layout.activity_timer)
         binding = ActivityTimerBinding.inflate(layoutInflater)
         setContentView(binding.root)
-         prefs = getSharedPreferences("prefs", MODE_PRIVATE)
-        startTimer()
-        binding.btnStart.isEnabled = true
+        auth = FirebaseAuth.getInstance()
+        database = FirebaseDatabase.getInstance().reference
+
+        prefs = getSharedPreferences("prefs", MODE_PRIVATE)
+//        startTimer()
+
+
         firstTimeUsed = prefs.getBoolean("firstTimeUsedKey",true);
         binding.btnStart.setOnClickListener { v ->
             startTimer()
             timerState = TimerState.Running
 //            updateButtons()
              prefs = getSharedPreferences("prefs", MODE_PRIVATE)
-            date.add(Calendar.DATE,91)
+//            database.child("users").child(auth.uid.toString()).child("start_date").setValue(couponcreated)
 
-            var  couponexpires = dateFormat.format(date.getTime());
+           date.add(Calendar.DATE,91)
 
-            val editor = prefs.edit()
-            editor.putString("start" , couponcreated )
-            editor.putString("end" , couponexpires)
-            editor.apply()
+              couponexpires = dateFormat.format(date.getTime());
+            var futureDate: Date = dateFormat.parse(couponexpires);
+//            database.child("users").child(auth.uid.toString()).child("end_date").setValue(couponexpires)
+//            database.child("users").child(auth.uid.toString()).child("end_date_milli").setValue(futureDate.time)
+
+             diff =futureDate.time - date.timeInMillis
+//            val editor = prefs.edit()
+//            editor.putString("start" , couponcreated )
+//            editor.putString("end" , couponexpires)
+//            editor.apply()
             safe_click()
         }
+        if (timerState == TimerState.Running ){
+            binding.btnStart.visibility = View.GONE
+        }
+        database.child("users").child(auth.uid.toString()).child("end_date").addListenerForSingleValueEvent(object :
+            ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                binding.txtEndDate.text = snapshot.value.toString()
 
 
-        binding.txtBegainDate.text  = prefs.getString("start" , "")
+            }
 
-        binding.txtEndDate.text = prefs.getString("end" ,"")
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+
+        })
+        database.child("users").child(auth.uid.toString()).child("end_date_milli").addListenerForSingleValueEvent(object :
+            ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                var future :Long =  converttolong(snapshot.value.toString())
+                var currentDate: Date = Date()
+                var result = future - currentDate.time
+                var days: Long = result / (24 * 60 * 60 * 1000);
+                binding.textViewProgressPercent.text = (days.toString() + "/90")
+                binding.progressBar.progress = days.toInt()
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+
+        })
+        database.child("users").child(auth.uid.toString()).child("start_date").addListenerForSingleValueEvent(object :
+            ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                binding.txtBegainDate.text = snapshot.value.toString()
+
+
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+
+        })
+
+
+
+
+
+
+
+
 
 
 
@@ -136,16 +204,16 @@ class TimerActivity : AppCompatActivity() {
 //        var date_after =Date(System.currentTimeMillis() +7862400000)
 //        var date2 = sdf.format(date_after)
 //        binding.txtEndDate.text = date2
-
+//        binding.btnStart.isEnabled = true
     }
 
     override fun onPause() {
         super.onPause()
 
         if (timerState == TimerState.Running) {
-            timer.cancel()
-            val wakeUpTime = setAlarm(this, nowSeconds, secondsRemaining)
-            NotificationUtil.showTimerRunning(this, wakeUpTime)
+//            timer.cancel()
+//            val wakeUpTime = setAlarm(this, nowSeconds, secondsRemaining)
+            NotificationUtil.showTimerRunning(this, mTimeLeftInMillis)
         } else if (timerState == TimerState.Paused) {
             NotificationUtil.showTimerPaused(this)
         }
@@ -229,7 +297,7 @@ class TimerActivity : AppCompatActivity() {
 
 
         mEndTime = System.currentTimeMillis() + mTimeLeftInMillis
-        timer = object : CountDownTimer(mEndTime, 1000) {
+        timer = object : CountDownTimer(date.timeInMillis, 1000) {
 
 
             override fun onFinish() = onTimerFinished()
@@ -287,7 +355,7 @@ class TimerActivity : AppCompatActivity() {
         val date = Calendar.getInstance()
         var couponcreated = dateFormat.format(date.getTime())
 
-        date.add(Calendar.DATE,91)
+        date.add(Calendar.DATE,1500)
 
 //
 //        binding.txtBegainDate.text = couponcreated
@@ -306,8 +374,8 @@ class TimerActivity : AppCompatActivity() {
         binding.progressBar.max = 90
         binding.progressBar.min =0
 //        binding.textViewProgressPercent.setText("" + String.format("%02d", days)+":"+String.format("%02d", hours)+":"+String.format("%02d", minutes)+":" +String.format("%02d", seconds));
-                    binding.textViewProgressPercent.text = (days.toString() + "/90")
-                    binding.progressBar.progress = days.toInt()
+//                    binding.textViewProgressPercent.text = (days.toString() + "/90")
+//                    binding.progressBar.progress = days.toInt()
 
     }
 
@@ -336,6 +404,13 @@ class TimerActivity : AppCompatActivity() {
         editor.apply()
         binding.btnStart.setVisibility(View.GONE);
     }
+fun  converttolong(s:String): Long {
+    var value = s.toLong()
+    return value
+
+}
+
+
 
 
 

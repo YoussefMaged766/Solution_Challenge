@@ -3,7 +3,6 @@ package com.example.solutionchallenge.Timer
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import com.example.solutionchallenge.DietFragment
 import com.example.solutionchallenge.TimerActivity
 import com.example.solutionchallenge.constants.AppConstants
 

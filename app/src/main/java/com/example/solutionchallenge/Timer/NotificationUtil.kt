@@ -62,8 +62,9 @@ class NotificationUtil {
 //            var  futureDate:Date = dateFormat.parse("2022-3-4");
 //            var currentDate :Date  =  Date()
 //            var diff:Long  = futureDate.getTime()- currentDate.getTime()
+//            var now = dateFormat.format(wakeUpTime)
 //            nBuilder.setContentTitle("Timer is Running.")
-//                .setContentText("End: ${dateFormat.format(futureDate.time)}")
+//                .setContentText("End: ${(now)}")
 //                .setContentIntent(getPendingIntentWithStack(context, TimerActivity::class.java))
 //                .setOngoing(true)
 //
