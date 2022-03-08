@@ -13,20 +13,26 @@
 
     <fragment
         android:id="@+id/nav_Exercise"
-        android:name="com.example.solutionchallenge.ui.gallery.ExersiesFragment"
-        android:label="@string/menu_gallery"
+        android:name="com.example.solutionchallenge.ui.Exersies.ExersiesFragment"
+        android:label="@string/menu_exersises"
         tools:layout="@layout/fragment_exersiese" />
 
     <fragment
         android:id="@+id/nav_meal"
-        android:name="com.example.solutionchallenge.ui.slideshow.MealFragment"
-        android:label="@string/menu_slideshow"
+        android:name="com.example.solutionchallenge.ui.meal.MealFragment"
+        android:label="@string/menu_meals"
         tools:layout="@layout/fragment_meal" />
 
     <fragment
         android:id="@+id/nav_profile"
-        android:name="com.example.solutionchallenge.Exit_Fragment"
-        android:label="@string/menu_slideshow"
+        android:name="com.example.solutionchallenge.ProfileFragment"
+        android:label="@string/menu_profile"
         tools:layout="@layout/fragment_profile" />
+
+    <activity
+        android:id="@+id/nav_Diet"
+        android:name="com.example.solutionchallenge.TimerActivity"
+        android:label="Diet"
+        tools:layout="@layout/activity_timer"/>
 
 </navigation>

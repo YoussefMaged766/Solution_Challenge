@@ -10,7 +10,8 @@ import com.example.solutionchallenge.R
 import com.example.solutionchallenge.classes.Nutration_data
 import com.example.solutionchallenge.classes.data_intro
 
-class Nutration_adapter(var items:List<Nutration_data>):RecyclerView.Adapter<Nutration_adapter.viewholder>() {
+class Nutration_adapter(var items:ArrayList<Nutration_data>):RecyclerView.Adapter<Nutration_adapter.viewholder>() {
+
     class viewholder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
         var img = itemView.findViewById<ImageView>(R.id.imageView_list)
@@ -30,9 +31,14 @@ class Nutration_adapter(var items:List<Nutration_data>):RecyclerView.Adapter<Nut
 
     override fun onBindViewHolder(holder: viewholder, position: Int) {
         holder.bind(items[position])
+
+
+
     }
 
     override fun getItemCount(): Int {
         return items.size
     }
+
+
 }

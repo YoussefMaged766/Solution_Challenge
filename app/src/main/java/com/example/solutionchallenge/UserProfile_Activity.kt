@@ -112,7 +112,7 @@ class UserProfile_Activity : AppCompatActivity() {
             editor.apply()
         }
         btn_back.setOnClickListener {
-            startActivity(Intent(applicationContext, HomeActivity::class.java))
+            startActivity(Intent(applicationContext, Home_Activity::class.java))
         }
 
 
@@ -177,7 +177,7 @@ class UserProfile_Activity : AppCompatActivity() {
 
     companion object {
         private val IMAGE_CHOOSE = 1000;
-        private val PERMISSION_CODE = 1001
+        val PERMISSION_CODE = 1001
 
     }
 

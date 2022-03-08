@@ -57,7 +57,7 @@ class Register_Activity : AppCompatActivity() {
                 if (it.isSuccessful){
                   sendEmailVerification()
                     send_data_firebase()
-                    startActivity(Intent(this, HomeActivity::class.java))
+                    startActivity(Intent(this, Home_Activity::class.java))
                     finish()
                 }else{
                     Toast.makeText(this ,"failed" + it.exception,Toast.LENGTH_SHORT).show()
