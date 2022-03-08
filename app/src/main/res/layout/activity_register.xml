@@ -156,6 +156,7 @@
 
 
     </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tct_container_email"
         android:layout_width="0dp"
@@ -171,14 +172,14 @@
         app:boxBackgroundColor="@color/white"
         >
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txt_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/e_mail_hint"
-        android:fontFamily="@font/tahoma_regular"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txt_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/tahoma_regular"
+            android:hint="@string/e_mail_hint"
 
-        />
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
