@@ -29,7 +29,8 @@
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/activity_home2.xml" value="0.22530996152201796" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/activity_intro_sliding.xml" value="0.10400000000000001" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/activity_main.xml" value="0.27447916666666666" />
-        <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/activity_register.xml" value="0.264" />
+        <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/activity_register.xml" value="0.176" />
+        <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/activity_sign_in.xml" value="0.22530996152201796" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/activity_signin.xml" value="0.2325684024713151" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/activity_splash_screen.xml" value="0.27447916666666666" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/activity_system_info.xml" value="0.22530996152201796" />
@@ -39,6 +40,8 @@
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/app_bar_home.xml" value="0.22530996152201796" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/content_home.xml" value="0.22530996152201796" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/custom_dialog.xml" value="0.22530996152201796" />
+        <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/custom_dialog_exit.xml" value="0.22530996152201796" />
+        <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/fragment_custom_dialog.xml" value="0.22530996152201796" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/fragment_diet.xml" value="0.22530996152201796" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/fragment_exersiese.xml" value="0.2" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/fragment_exit_.xml" value="0.22530996152201796" />
@@ -58,6 +61,7 @@
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/mipmap-anydpi-v26/ic_launcher2_round.xml" value="0.135" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.135" />
         <entry key="..\:/AndroidStudioProjects/Solution_Challenge/app/src/main/res/layout/activity_main.xml" value="0.10989583333333333" />
+        <entry key="..\:/sdk/platforms/android-31/data/res/layout/simple_spinner_item.xml" value="0.22530996152201796" />
       </map>
     </option>
   </component>

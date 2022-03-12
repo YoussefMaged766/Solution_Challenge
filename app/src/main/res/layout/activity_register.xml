@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Register_Activity">
+
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/view_style"
-        />
+        android:background="@drawable/view_style" />
+
     <TextView
         android:id="@+id/txt_fit"
         android:layout_width="wrap_content"
@@ -41,6 +42,7 @@
         app:layout_constraintTop_toBottomOf="@id/txt_fit"
         android:scaleType="fitXY"
         app:tint="@color/white" />
+
     <TextView
         android:id="@+id/create_account"
         android:layout_width="wrap_content"
@@ -53,8 +55,7 @@
         android:fontFamily="@font/tahoma_regular"
         android:textColor="@color/intro_color"
         android:textSize="25sp"
-        android:textStyle="bold"
-      />
+        android:textStyle="bold" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_google"
@@ -128,8 +129,7 @@
         android:background="@color/black_border"
         app:layout_constraintStart_toEndOf="@+id/txt_or"
         app:layout_constraintTop_toBottomOf="@id/btn_google"
-        app:layout_constraintBottom_toTopOf="@id/txt_container_name"
-        />
+        app:layout_constraintBottom_toTopOf="@id/txt_container_name" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txt_container_name"
@@ -144,6 +144,7 @@
         app:boxStrokeColor="@color/intro_color"
         app:hintTextColor="@color/intro_color"
         app:boxBackgroundColor="@color/white"
+
         >
 
         <com.google.android.material.textfield.TextInputEditText
@@ -151,8 +152,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/name_hint"
-            android:fontFamily="@font/tahoma_regular"
-           />
+            android:fontFamily="@font/tahoma_regular" />
 
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -169,8 +169,7 @@
         app:endIconMode="clear_text"
         app:boxStrokeColor="@color/intro_color"
         app:hintTextColor="@color/intro_color"
-        app:boxBackgroundColor="@color/white"
-        >
+        app:boxBackgroundColor="@color/white">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txt_email"
@@ -219,7 +218,7 @@
         app:layout_constraintEnd_toEndOf="@id/btn_facebook"
         app:layout_constraintTop_toBottomOf="@id/txt_container_password"
         android:fontFamily="@font/tahoma_bold"
-        android:textSize="17sp"/>
+        android:textSize="17sp" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_createAccount"
@@ -233,16 +232,19 @@
         android:backgroundTint="#fe8312"
         app:cornerRadius="10dp"
         android:padding="12dp"
-        android:fontFamily="@font/georgia_regular_font"/>
+        android:fontFamily="@font/georgia_regular_font" />
+
     <TextView
         android:id="@+id/text12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/btn_createAccount"
         app:layout_constraintStart_toStartOf="@id/btn_createAccount"
+        app:layout_constraintEnd_toEndOf="@id/btn_createAccount"
+
         android:layout_marginTop="10dp"
         android:text="@string/aleardy_have_an_account"
-        android:fontFamily="@font/tahoma_regular"/>
+        android:fontFamily="@font/tahoma_regular" />
 
     <TextView
         android:id="@+id/txt_login"
@@ -253,11 +255,10 @@
         android:textColor="@color/intro_color"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/text12"
+
         app:layout_constraintStart_toEndOf="@id/text12"
-        app:layout_constraintTop_toBottomOf="@id/btn_createAccount" />
 
-
-
+        app:layout_constraintTop_toTopOf="@id/text12" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

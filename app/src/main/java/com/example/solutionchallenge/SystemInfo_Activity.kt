@@ -13,7 +13,7 @@ lateinit var btn_submit :Button
 lateinit var spinner: Spinner
 lateinit var  adapter1: Nutration_adapter
 lateinit var txt_tall :EditText
-lateinit var btn_result : Button
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,8 +45,8 @@ lateinit var btn_result : Button
             var i =Intent(this , SystemResult_Activity::class.java)
             var tall = Integer.parseInt(txt_tall.text.toString())
             i.putExtra("tall" ,tall )
-
             startActivity(i)
+            finish()
 
         }
 

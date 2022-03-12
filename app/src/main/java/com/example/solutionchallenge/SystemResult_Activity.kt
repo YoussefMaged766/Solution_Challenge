@@ -27,7 +27,7 @@ class SystemResult_Activity : AppCompatActivity() {
     private lateinit var database: DatabaseReference
     private lateinit var auth: FirebaseAuth
     private lateinit var userArrayList: ArrayList<Nutration_data>
-    private val PREFS_NAME = "kotlincodes"
+    private val PREFS_NAME = "kotlincod"
     lateinit var couponexpires:String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -124,8 +124,8 @@ class SystemResult_Activity : AppCompatActivity() {
 
             date.add(Calendar.DATE,91)
 
-            couponexpires = TimerActivity.dateFormat.format(date.getTime());
-            var futureDate: Date = TimerActivity.dateFormat.parse(couponexpires);
+            couponexpires = dateFormat.format(date.getTime());
+            var futureDate: Date = dateFormat.parse(couponexpires);
             database.child("users").child(auth.uid.toString()).child("end_date").setValue(couponexpires)
             database.child("users").child(auth.uid.toString()).child("end_date_milli").setValue(futureDate.time)
 

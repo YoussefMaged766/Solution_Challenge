@@ -34,5 +34,10 @@
         android:name="com.example.solutionchallenge.TimerActivity"
         android:label="Diet"
         tools:layout="@layout/activity_timer"/>
+    <activity
+        android:id="@+id/nav_Exit"
+        android:name="com.example.solutionchallenge.Sign_In_Activity"
+        tools:layout="@layout/activity_sign_in"/>
+
 
 </navigation>
