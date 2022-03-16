@@ -17,6 +17,7 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.app.ActivityCompat
 import androidx.core.content.PermissionChecker
 import androidx.databinding.DataBindingUtil
@@ -24,6 +25,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.solutionchallenge.classes.Toast
 import com.example.solutionchallenge.databinding.FragmentProfileBinding
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.squareup.picasso.Picasso
@@ -71,25 +73,47 @@ class ProfileFragment : Fragment() {
 
     binding.floatingCameraBtn.setOnClickListener {
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                if (ActivityCompat.checkSelfPermission(requireContext(),android.Manifest.permission.READ_EXTERNAL_STORAGE) == PermissionChecker.PERMISSION_DENIED) {
-                    val permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
-                    requestPermissions(permissions, UserProfile_Activity.PERMISSION_CODE)
+            if (auth.uid!=null){
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    if (ActivityCompat.checkSelfPermission(requireContext(),android.Manifest.permission.READ_EXTERNAL_STORAGE) == PermissionChecker.PERMISSION_DENIED) {
+                        val permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
+                        requestPermissions(permissions, UserProfile_Activity.PERMISSION_CODE)
+                    } else {
+                        chooseImageGallery()
+
+                    }
                 } else {
                     chooseImageGallery()
 
                 }
-            } else {
-                chooseImageGallery()
-
             }
+                else{
+                Snackbar.make(binding.profileLayout, "you should sign in first", Snackbar.LENGTH_LONG)
+                    .setAction("Sign up") {
+                       startActivity(Intent(requireContext() , Register_Activity::class.java) )
+
+                    }
+                    .show()
+
+                }
+
+
+
+
+
 
         }
 
        database.child("users").child(auth.uid.toString()).child("name")
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
-                    binding.txtnameProfile.text = snapshot.getValue().toString()
+                    if (snapshot.exists()){
+                        binding.txtnameProfile.text = snapshot.getValue().toString()
+                    }
+                    else{
+                        binding.txtnameProfile.text = "guest"
+                    }
+
 
                 }
 
@@ -108,9 +132,14 @@ class ProfileFragment : Fragment() {
 
         var img = sharedPref.getString(PREFS_NAME, imageUri.toString())
 //        Glide.with(getApplicationContext()).load(img.toString()).into(image_profile)
-        Picasso.with(requireContext()).load(img.toString()).into(binding.imageProfile)
 
 
+        if (sharedPref.contains(PREFS_NAME)){
+            Picasso.with(requireContext()).load(img.toString()).into(binding.imageProfile)
+        }
+        else{
+            binding.imageProfile.setImageResource(R.drawable.ic_baseline_person_pin_24)
+        }
 
 
 

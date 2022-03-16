@@ -10,7 +10,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Exit_Fragment">
+        tools:context=".Exit_Fragment"
+        android:id="@+id/profile_layout">
 
 
         <de.hdodenhof.circleimageview.CircleImageView

@@ -1,9 +1,11 @@
 package com.example.solutionchallenge.ui.Exersies
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Adapter
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -18,6 +20,7 @@ class ExersiesFragment : Fragment() {
     lateinit var binding: FragmentExersieseBinding
     lateinit var adapter_home: Nutration_adapter
     lateinit var adapter_gym: Nutration_adapter
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -45,7 +48,9 @@ class ExersiesFragment : Fragment() {
 
 
 
+
         return binding.root
     }
+
 
 }

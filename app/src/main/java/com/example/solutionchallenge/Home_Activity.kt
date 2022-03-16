@@ -89,60 +89,76 @@ class Home_Activity : AppCompatActivity() {
         binding.navViewBot.setupWithNavController(navController)
         navView.setNavigationItemSelectedListener { it: MenuItem ->
             if (it.itemId == R.id.nav_Diet) {
-               database.child("users").child(auth.uid.toString()).child("start_date").addListenerForSingleValueEvent(object :ValueEventListener{
-                   override fun onDataChange(snapshot: DataSnapshot) {
-                       if (snapshot.value.toString().equals("0")){
-                           Toast(this@Home_Activity , "No plan picked")
-                       }else{
-                           navView.setupWithNavController(navController)
-                       }
-                   }
+                database.child("users").child(auth.uid.toString()).child("start_date")
+                    .addListenerForSingleValueEvent(object : ValueEventListener {
+                        override fun onDataChange(snapshot: DataSnapshot) {
+                            if (snapshot.value.toString().equals("0")) {
+                                Toast(this@Home_Activity, "No plan picked")
+                            } else if (auth.uid == null) {
+                                Toast(this@Home_Activity, "No plan picked")
+                            } else {
+                                navView.setupWithNavController(navController)
+                            }
+                        }
 
-                   override fun onCancelled(error: DatabaseError) {
-                       TODO("Not yet implemented")
-                   }
+                        override fun onCancelled(error: DatabaseError) {
+                            TODO("Not yet implemented")
+                        }
 
-               })
+                    })
+
 
             }
-            if (it.itemId == R.id.nav_Exit){
+            if (it.itemId == R.id.nav_Exit) {
 //                navController.navigate(R.id.nav_Exit)
 //                 navView.setupWithNavController(navController)
-                val builder: AlertDialog.Builder = AlertDialog.Builder(this)
-                builder.setTitle("Log out")
-                val customlayout: View = layoutInflater.inflate(R.layout.custom_dialog_exit, null)
-                builder.setView(customlayout)
-                builder.setPositiveButton("delete", object : DialogInterface.OnClickListener {
-                    override fun onClick(dialog: DialogInterface?, which: Int) {
-                        var edittext_email1: EditText = customlayout.findViewById(R.id.editText_email)
-                        var edittext_password1: EditText = customlayout.findViewById(R.id.editText_password)
-                        var email = edittext_email1.text.toString()
-                        var password = edittext_password1.text.toString()
-                        val user = FirebaseAuth.getInstance().currentUser
-                        val credential = EmailAuthProvider.getCredential(email, password)
-                        database.child("users").child(auth.uid.toString()).removeValue()
-                        sharedPref =getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
-                        sharedPref.edit().remove(PREFS_NAME).apply()
-                        // Prompt the user to re-provide their sign-in credentials
-                        user?.reauthenticate(credential)?.addOnCompleteListener {
-                            user.delete()
-                                .addOnCompleteListener { task ->
-                                    if (task.isSuccessful) {
-                                        startActivity(Intent(this@Home_Activity, Sign_In_Activity::class.java))
+                if (auth.currentUser != null) {
+                    val builder: AlertDialog.Builder = AlertDialog.Builder(this)
+                    builder.setTitle("Log out")
+                    val customlayout: View =
+                        layoutInflater.inflate(R.layout.custom_dialog_exit, null)
+                    builder.setView(customlayout)
+                    builder.setPositiveButton("delete", object : DialogInterface.OnClickListener {
+                        override fun onClick(dialog: DialogInterface?, which: Int) {
+                            var edittext_email1: EditText =
+                                customlayout.findViewById(R.id.editText_email)
+                            var edittext_password1: EditText =
+                                customlayout.findViewById(R.id.editText_password)
+                            var email = edittext_email1.text.toString()
+                            var password = edittext_password1.text.toString()
+                            val user = FirebaseAuth.getInstance().currentUser
+                            val credential = EmailAuthProvider.getCredential(email, password)
+                            database.child("users").child(auth.uid.toString()).removeValue()
+                            sharedPref = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+                            sharedPref.edit().remove(PREFS_NAME).apply()
+                            // Prompt the user to re-provide their sign-in credentials
+                            user?.reauthenticate(credential)?.addOnCompleteListener {
+                                user.delete()
+                                    .addOnCompleteListener { task ->
+                                        if (task.isSuccessful) {
+                                            startActivity(
+                                                Intent(
+                                                    this@Home_Activity,
+                                                    Sign_In_Activity::class.java
+                                                )
+                                            )
 //                                        navView.setupWithNavController(navController)
                                             finish()
 
-                                        Toast(this@Home_Activity, "Deleted User Successfully,")
+                                            Toast(this@Home_Activity, "Deleted User Successfully,")
+                                        }
                                     }
-                                }
+                            }
+
                         }
 
-                    }
-
-                })
-                val dialog = builder.create()
-                dialog.show()
-
+                    })
+                    val dialog = builder.create()
+                    dialog.show()
+                } else {
+                    startActivity(Intent(applicationContext, Register_Activity::class.java))
+                    finish()
+                }
 
 
             }

@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.solutionchallenge.R
 import com.example.solutionchallenge.classes.Nutration_data
 import com.example.solutionchallenge.classes.data_intro
+import com.example.solutionchallenge.databinding.FragmentExersieseBinding
 
 class Nutration_adapter(var items:ArrayList<Nutration_data>):RecyclerView.Adapter<Nutration_adapter.viewholder>() {
 
@@ -22,15 +23,19 @@ class Nutration_adapter(var items:ArrayList<Nutration_data>):RecyclerView.Adapte
             img.setImageResource(introslide.img)
 
         }
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): viewholder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.nutration_item_list,parent,false)
         return viewholder(view)
+
     }
 
     override fun onBindViewHolder(holder: viewholder, position: Int) {
         holder.bind(items[position])
+
+
 
 
 
