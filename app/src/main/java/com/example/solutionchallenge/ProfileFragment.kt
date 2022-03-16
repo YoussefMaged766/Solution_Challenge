@@ -126,6 +126,9 @@ class ProfileFragment : Fragment() {
             val editor: SharedPreferences.Editor = sharedPref.edit()
             editor.putString(PREFS_NAME, imageUri.toString())
             editor.apply()
+            database.child("users").child(auth.uid.toString()).child("tall").setValue(binding.textviewTallEdit.text.toString())
+           database.child("users").child(auth.uid.toString()).child("weight").setValue(binding.textviewWeightEdit.text.toString())
+           database.child("users").child(auth.uid.toString()).child("age").setValue(binding.textviewAgeEdit.text.toString())
         }
 
 
@@ -142,18 +145,17 @@ class ProfileFragment : Fragment() {
         }
 
 
-
-
-
-
-
-
-
-
         set_dialog(binding.textviewAge.text.toString(), binding.textviewAgeEdit)
         set_dialog(binding.textviewTall.text.toString(), binding.textviewTallEdit)
         set_dialog(binding.textviewWeight.text.toString(), binding.textviewWeightEdit)
         set_dialog(binding.textviewAccount.text.toString(), binding.textviewAccountEdit)
+
+
+
+check_data()
+
+
+
 
 
 
@@ -228,5 +230,73 @@ class ProfileFragment : Fragment() {
 
         }
 
+    }
+    fun check_data(){
+        if (auth.uid==null){
+            binding.textviewAgeEdit.text=""
+            binding.textviewTallEdit.text =""
+            binding.textviewWeightEdit.text=""
+            binding.textviewAccountEdit.text = ""
+        }
+        else if (auth.uid!=null){
+            database.child("users").child(auth.uid.toString()).child("tall").addListenerForSingleValueEvent(object :ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    binding.textviewTallEdit.text =snapshot.value.toString()
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+
+                }
+
+            })
+            database.child("users").child(auth.uid.toString()).child("weight").addListenerForSingleValueEvent(object :ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    binding.textviewWeightEdit.text =snapshot.value.toString()
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+
+                }
+
+            })
+            database.child("users").child(auth.uid.toString()).child("email").addListenerForSingleValueEvent(object :ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    binding.textviewAccountEdit.text = snapshot.value.toString()
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+
+                }
+
+            })
+        }
+        else{
+            database.child("users").child(auth.uid.toString()).child("start_date")
+                .addListenerForSingleValueEvent(object : ValueEventListener {
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        if (snapshot.value.toString().equals("0")){
+                            binding.textviewAgeEdit.text=""
+                            binding.textviewTallEdit.text =""
+                            binding.textviewWeightEdit.text=""
+                            database.child("users").child(auth.uid.toString()).child("email").addListenerForSingleValueEvent(object :ValueEventListener{
+                                override fun onDataChange(snapshot: DataSnapshot) {
+                                    binding.textviewAccountEdit.text = snapshot.value.toString()
+                                }
+
+                                override fun onCancelled(error: DatabaseError) {
+
+                                }
+
+                            })
+                        }
+
+                    }
+
+                    override fun onCancelled(error: DatabaseError) {
+
+                    }
+
+                })
+        }
     }
 }
