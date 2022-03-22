@@ -41,17 +41,20 @@
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/content_home.xml" value="0.22530996152201796" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/custom_dialog.xml" value="0.22530996152201796" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/custom_dialog_exit.xml" value="0.22530996152201796" />
+        <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/fragment_bottom_sheet_fragment.xml" value="0.22530996152201796" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/fragment_custom_dialog.xml" value="0.22530996152201796" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/fragment_diet.xml" value="0.22530996152201796" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/fragment_exersiese.xml" value="0.2" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/fragment_exit_.xml" value="0.22530996152201796" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/fragment_gallery.xml" value="0.22530996152201796" />
-        <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/fragment_home.xml" value="0.22530996152201796" />
+        <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/fragment_home.xml" value="0.17267552182163187" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/fragment_meal.xml" value="0.2" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/fragment_profile.xml" value="0.22530996152201796" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/fragment_slideshow.xml" value="0.22530996152201796" />
+        <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/meal_details_item.xml" value="0.22530996152201796" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/nav_header_home.xml" value="0.22530996152201796" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/nutration_item_list.xml" value="0.22530996152201796" />
+        <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/sliding_data.xml" value="0.11011282908483076" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/layout/sliding_item.xml" value="0.152" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/menu/activity_main_drawer.xml" value="0.536" />
         <entry key="..\:/AndroidProjects/solutionchallenge/app/src/main/res/menu/bottom_nav_menu.xml" value="0.22530996152201796" />

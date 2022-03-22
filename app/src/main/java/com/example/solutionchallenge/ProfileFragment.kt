@@ -42,7 +42,7 @@ class ProfileFragment : Fragment() {
     lateinit var sharedPref: SharedPreferences
 
 
-    lateinit var  binding: FragmentProfileBinding
+    lateinit var binding: FragmentProfileBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -55,27 +55,33 @@ class ProfileFragment : Fragment() {
 
     ): View {
 
-         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile, container, false)
 
         database = FirebaseDatabase.getInstance().reference
         auth = FirebaseAuth.getInstance()
 
 
-       var frg: Fragment = requireActivity().getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment_content_home)!!
-        val ft: FragmentTransaction = requireActivity().getSupportFragmentManager().beginTransaction()
+        var frg: Fragment = requireActivity().getSupportFragmentManager()
+            .findFragmentById(R.id.nav_host_fragment_content_home)!!
+        val ft: FragmentTransaction =
+            requireActivity().getSupportFragmentManager().beginTransaction()
         ft.detach(frg)
         ft.attach(frg)
         ft.commit()
 
 
 
-        sharedPref =requireContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+        sharedPref = requireContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
 
-    binding.floatingCameraBtn.setOnClickListener {
+        binding.floatingCameraBtn.setOnClickListener {
 
-            if (auth.uid!=null){
+            if (auth.uid != null) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    if (ActivityCompat.checkSelfPermission(requireContext(),android.Manifest.permission.READ_EXTERNAL_STORAGE) == PermissionChecker.PERMISSION_DENIED) {
+                    if (ActivityCompat.checkSelfPermission(
+                            requireContext(),
+                            android.Manifest.permission.READ_EXTERNAL_STORAGE
+                        ) == PermissionChecker.PERMISSION_DENIED
+                    ) {
                         val permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
                         requestPermissions(permissions, UserProfile_Activity.PERMISSION_CODE)
                     } else {
@@ -86,31 +92,29 @@ class ProfileFragment : Fragment() {
                     chooseImageGallery()
 
                 }
-            }
-                else{
-                Snackbar.make(binding.profileLayout, "you should sign in first", Snackbar.LENGTH_LONG)
+            } else {
+                Snackbar.make(
+                    binding.profileLayout,
+                    "you should sign in first",
+                    Snackbar.LENGTH_LONG
+                )
                     .setAction("Sign up") {
-                       startActivity(Intent(requireContext() , Register_Activity::class.java) )
+                        startActivity(Intent(requireContext(), Register_Activity::class.java))
 
                     }
                     .show()
 
-                }
-
-
-
-
+            }
 
 
         }
 
-       database.child("users").child(auth.uid.toString()).child("name")
+        database.child("users").child(auth.uid.toString()).child("name")
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
-                    if (snapshot.exists()){
+                    if (snapshot.exists()) {
                         binding.txtnameProfile.text = snapshot.getValue().toString()
-                    }
-                    else{
+                    } else {
                         binding.txtnameProfile.text = "guest"
                     }
 
@@ -122,25 +126,37 @@ class ProfileFragment : Fragment() {
                 }
 
             })
-       binding.btnSaveProfile.setOnClickListener {
+        database.child("users").child(auth.uid.toString()).child("age")
+            .addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    binding.textviewAgeEdit.text = snapshot.value.toString()
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+
+                }
+
+            })
+        binding.btnSaveProfile.setOnClickListener {
             val editor: SharedPreferences.Editor = sharedPref.edit()
             editor.putString(PREFS_NAME, imageUri.toString())
             editor.apply()
-            database.child("users").child(auth.uid.toString()).child("tall").setValue(binding.textviewTallEdit.text.toString())
-           database.child("users").child(auth.uid.toString()).child("weight").setValue(binding.textviewWeightEdit.text.toString())
-           database.child("users").child(auth.uid.toString()).child("age").setValue(binding.textviewAgeEdit.text.toString())
+            database.child("users").child(auth.uid.toString()).child("tall")
+                .setValue(binding.textviewTallEdit.text.toString())
+            database.child("users").child(auth.uid.toString()).child("weight")
+                .setValue(binding.textviewWeightEdit.text.toString())
+            database.child("users").child(auth.uid.toString()).child("age")
+                .setValue(binding.textviewAgeEdit.text.toString())
         }
-
 
 
         var img = sharedPref.getString(PREFS_NAME, imageUri.toString())
 //        Glide.with(getApplicationContext()).load(img.toString()).into(image_profile)
 
 
-        if (sharedPref.contains(PREFS_NAME)){
+        if (sharedPref.contains(PREFS_NAME)) {
             Picasso.with(requireContext()).load(img.toString()).into(binding.imageProfile)
-        }
-        else{
+        } else {
             binding.imageProfile.setImageResource(R.drawable.ic_baseline_person_pin_24)
         }
 
@@ -152,7 +168,7 @@ class ProfileFragment : Fragment() {
 
 
 
-check_data()
+        check_data()
 
 
 
@@ -202,14 +218,18 @@ check_data()
     }
 
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         when (requestCode) {
             UserProfile_Activity.PERMISSION_CODE -> {
                 if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     chooseImageGallery()
                 } else {
-                    Toast(requireContext(),"Permission denied")
+                    Toast(requireContext(), "Permission denied")
                 }
             }
         }
@@ -231,63 +251,66 @@ check_data()
         }
 
     }
-    fun check_data(){
-        if (auth.uid==null){
-            binding.textviewAgeEdit.text=""
-            binding.textviewTallEdit.text =""
-            binding.textviewWeightEdit.text=""
+
+    fun check_data() {
+        if (auth.uid == null) {
+            binding.textviewAgeEdit.text = ""
+            binding.textviewTallEdit.text = ""
+            binding.textviewWeightEdit.text = ""
             binding.textviewAccountEdit.text = ""
-        }
-        else if (auth.uid!=null){
-            database.child("users").child(auth.uid.toString()).child("tall").addListenerForSingleValueEvent(object :ValueEventListener{
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    binding.textviewTallEdit.text =snapshot.value.toString()
-                }
+        } else if (auth.uid != null) {
+            database.child("users").child(auth.uid.toString()).child("tall")
+                .addListenerForSingleValueEvent(object : ValueEventListener {
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        binding.textviewTallEdit.text = snapshot.value.toString()
+                    }
 
-                override fun onCancelled(error: DatabaseError) {
+                    override fun onCancelled(error: DatabaseError) {
 
-                }
+                    }
 
-            })
-            database.child("users").child(auth.uid.toString()).child("weight").addListenerForSingleValueEvent(object :ValueEventListener{
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    binding.textviewWeightEdit.text =snapshot.value.toString()
-                }
+                })
+            database.child("users").child(auth.uid.toString()).child("weight")
+                .addListenerForSingleValueEvent(object : ValueEventListener {
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        binding.textviewWeightEdit.text = snapshot.value.toString()
+                    }
 
-                override fun onCancelled(error: DatabaseError) {
+                    override fun onCancelled(error: DatabaseError) {
 
-                }
+                    }
 
-            })
-            database.child("users").child(auth.uid.toString()).child("email").addListenerForSingleValueEvent(object :ValueEventListener{
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    binding.textviewAccountEdit.text = snapshot.value.toString()
-                }
+                })
+            database.child("users").child(auth.uid.toString()).child("email")
+                .addListenerForSingleValueEvent(object : ValueEventListener {
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        binding.textviewAccountEdit.text = snapshot.value.toString()
+                    }
 
-                override fun onCancelled(error: DatabaseError) {
+                    override fun onCancelled(error: DatabaseError) {
 
-                }
+                    }
 
-            })
-        }
-        else{
+                })
+        } else {
             database.child("users").child(auth.uid.toString()).child("start_date")
                 .addListenerForSingleValueEvent(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
-                        if (snapshot.value.toString().equals("0")){
-                            binding.textviewAgeEdit.text=""
-                            binding.textviewTallEdit.text =""
-                            binding.textviewWeightEdit.text=""
-                            database.child("users").child(auth.uid.toString()).child("email").addListenerForSingleValueEvent(object :ValueEventListener{
-                                override fun onDataChange(snapshot: DataSnapshot) {
-                                    binding.textviewAccountEdit.text = snapshot.value.toString()
-                                }
+                        if (snapshot.value.toString().equals("0")) {
+                            binding.textviewAgeEdit.text = ""
+                            binding.textviewTallEdit.text = ""
+                            binding.textviewWeightEdit.text = ""
+                            database.child("users").child(auth.uid.toString()).child("email")
+                                .addListenerForSingleValueEvent(object : ValueEventListener {
+                                    override fun onDataChange(snapshot: DataSnapshot) {
+                                        binding.textviewAccountEdit.text = snapshot.value.toString()
+                                    }
 
-                                override fun onCancelled(error: DatabaseError) {
+                                    override fun onCancelled(error: DatabaseError) {
 
-                                }
+                                    }
 
-                            })
+                                })
                         }
 
                     }

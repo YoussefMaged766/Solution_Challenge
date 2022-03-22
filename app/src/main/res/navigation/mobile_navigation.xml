@@ -9,7 +9,14 @@
         android:id="@+id/nav_home"
         android:name="com.example.solutionchallenge.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <argument
+            android:name="item_sheet"
+            app:argType="com.example.solutionchallenge.classes.Nutration_data"
+            app:nullable="true"
+            android:defaultValue="@null" />
+
+    </fragment>
 
     <fragment
         android:id="@+id/nav_Exercise"
@@ -38,6 +45,10 @@
         android:id="@+id/nav_Exit"
         android:name="com.example.solutionchallenge.Sign_In_Activity"
         tools:layout="@layout/activity_sign_in"/>
+<dialog
+    android:id="@+id/nav_sheet"
+    android:name="com.example.solutionchallenge.bottom_sheet_fragment"
+    tools:layout="@layout/fragment_bottom_sheet_fragment"/>
 
 
 </navigation>

@@ -9,7 +9,9 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.solutionchallenge.adapter.Nutration_adapter
+import com.example.solutionchallenge.adapter.details_adapter
 import com.example.solutionchallenge.classes.Nutration_data
+import com.example.solutionchallenge.classes.meal_details
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.gson.Gson
@@ -29,6 +31,19 @@ class SystemResult_Activity : AppCompatActivity() {
     private lateinit var userArrayList: ArrayList<Nutration_data>
     private val PREFS_NAME = "kotlincod"
     lateinit var couponexpires:String
+//    val data =
+////        listOf("1/ teaspoon ginger paste",
+////            "\n2/ teaspoon red chilli powder",
+////            "\n3/ teaspoon cumin powder salt as required",
+////            "\n4/ cup hung curd",
+////            "\n5/ teaspoon garlic paste",
+////            "\n6/ teaspoon coriander powder",
+////            "\n7/ teaspoon powdered black pepper",
+////            "\n8/ teaspoon garam masala powder",
+////            "\n9/ 350 gm chicken")
+
+    lateinit var data :meal_details
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_system_result)
@@ -39,20 +54,22 @@ class SystemResult_Activity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         userArrayList = arrayListOf<Nutration_data>()
         sharedPref = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+
+        data = meal_details()
         adapter_Nutration = Nutration_adapter(
             arrayListOf(
-                Nutration_data("Grilled chiken", R.drawable.istockphoto6),
-                Nutration_data("Chicken & poultry", R.drawable.istockphoto3),
-                Nutration_data("High fat veggies", R.drawable.istockphoto5)
+                Nutration_data("Grilled chiken", R.drawable.istockphoto6, details_adapter(data.data),"1h 10min" , "Ingredients", R.drawable.ic_baseline_access_time_24),
+                Nutration_data("Chicken & poultry", R.drawable.istockphoto3,details_adapter(data.data2),"40min" , "Ingredients", R.drawable.ic_baseline_access_time_24),
+                Nutration_data("High fat veggies", R.drawable.istockphoto5,details_adapter(data.data3),"1h" , "Ingredients", R.drawable.ic_baseline_access_time_24)
 
             )
         )
 
         adapter_Exercises = Nutration_adapter(
             arrayListOf(
-                Nutration_data("Side planks", R.drawable.istockphoto2),
-                Nutration_data("Squats ", R.drawable.istockphoto4),
-                Nutration_data("Push ups", R.drawable.istockphoto7)
+                Nutration_data("Side planks", R.drawable.istockphoto2,details_adapter(data.ex_data1),"","Steps",0),
+                Nutration_data("Squats ", R.drawable.istockphoto4,details_adapter(data.ex_data2),"","Steps",0),
+                Nutration_data("Push ups", R.drawable.istockphoto7,details_adapter(data.ex_data3),"","Steps",0)
 
             )
         )
@@ -72,9 +89,9 @@ class SystemResult_Activity : AppCompatActivity() {
 
             var myObject: Nutration_adapter =  Nutration_adapter(
                 arrayListOf(
-                    Nutration_data("Side planks", R.drawable.istockphoto3),
-                    Nutration_data("Squats ", R.drawable.istockphoto4),
-                    Nutration_data("Push ups", R.drawable.istockphoto7)
+                    Nutration_data("Side planks", R.drawable.istockphoto2,details_adapter(data.ex_data1),"","Steps",0),
+                    Nutration_data("Squats ", R.drawable.istockphoto4,details_adapter(data.ex_data2),"","Steps",0),
+                    Nutration_data("Push ups", R.drawable.istockphoto7,details_adapter(data.ex_data3),"","Steps",0)
 
                 )
             )
@@ -90,10 +107,9 @@ class SystemResult_Activity : AppCompatActivity() {
 
             var myObject: Nutration_adapter =  Nutration_adapter(
                 arrayListOf(
-                    Nutration_data("Grilled chiken", R.drawable.istockphoto6),
-                    Nutration_data("Chicken & poultry", R.drawable.istockphoto3),
-                    Nutration_data("High fat veggies", R.drawable.istockphoto5)
-
+                    Nutration_data("Grilled chiken", R.drawable.istockphoto6, details_adapter(data.data),"1h 10min" , "Ingredients", R.drawable.ic_baseline_access_time_24),
+                    Nutration_data("Chicken & poultry", R.drawable.istockphoto3,details_adapter(data.data2),"40min" , "Ingredients", R.drawable.ic_baseline_access_time_24),
+                    Nutration_data("High fat veggies", R.drawable.istockphoto5,details_adapter(data.data3),"1h" , "Ingredients", R.drawable.ic_baseline_access_time_24)
                 )
             )
 

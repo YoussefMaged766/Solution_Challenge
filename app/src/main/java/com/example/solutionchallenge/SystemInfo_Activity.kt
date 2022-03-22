@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import com.example.solutionchallenge.adapter.Nutration_adapter
+import com.example.solutionchallenge.adapter.details_adapter
 import com.example.solutionchallenge.classes.Nutration_data
+import com.example.solutionchallenge.classes.meal_details
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -19,6 +21,17 @@ class SystemInfo_Activity : AppCompatActivity() {
     lateinit var txt_weight: EditText
     private lateinit var database: DatabaseReference
     private lateinit var auth: FirebaseAuth
+lateinit var data :meal_details
+//    val data =
+//        listOf("1/ teaspoon ginger paste",
+//            "\n2/ teaspoon red chilli powder",
+//            "\n3/ teaspoon cumin powder salt as required",
+//            "\n4/ cup hung curd",
+//            "\n5/ teaspoon garlic paste",
+//            "\n6/ teaspoon coriander powder",
+//            "\n7/ teaspoon powdered black pepper",
+//            "\n8/ teaspoon garam masala powder",
+//            "\n9/ 350 gm chicken")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,11 +52,13 @@ class SystemInfo_Activity : AppCompatActivity() {
         )
         spinner.adapter = adapter
 
+        data = meal_details()
+
         adapter1 = Nutration_adapter(
             arrayListOf(
-                Nutration_data("Side planks", R.drawable.istockphoto2),
-                Nutration_data("Squats ", R.drawable.istockphoto4),
-                Nutration_data("Push ups", R.drawable.istockphoto7)
+                Nutration_data("Side planks", R.drawable.istockphoto2, details_adapter(data.ex_data1),"","Steps",0),
+                Nutration_data("Squats ", R.drawable.istockphoto4,details_adapter(data.ex_data2),"","Steps",0),
+                Nutration_data("Push ups", R.drawable.istockphoto7,details_adapter(data.ex_data3),"","Steps",0)
 
             )
         )

@@ -171,9 +171,11 @@ class Home_Activity : AppCompatActivity() {
         }
 
 
+//        binding.navViewBot.setOnNavigationItemSelectedListener(navigationItemSelectedListener)
+    }
 
-
-
+    override fun onStart() {
+        super.onStart()
         database.child("users").child(auth.uid.toString()).child("imagelink")
             .addListenerForSingleValueEvent(object :
                 ValueEventListener {
@@ -188,27 +190,7 @@ class Home_Activity : AppCompatActivity() {
                 }
 
             })
-
-
-//        binding.navViewBot.setOnNavigationItemSelectedListener(navigationItemSelectedListener)
     }
-
-//    var navigationItemSelectedListener =
-//        BottomNavigationView.OnNavigationItemSelectedListener { item ->
-//
-//
-//            when (item.itemId) {
-//
-//                 R.id.nav_Exercise ->findNavController(R.id.nav_host_fragment_content_home).navigate(R.id.nav_Exercise)
-//                 R.id.nav_meal -> findNavController(R.id.nav_host_fragment_content_home).navigate(R.id.nav_meal)
-//                R.id.nav_profile -> findNavController(R.id.nav_host_fragment_content_home).navigate(R.id.nav_profile)
-//                R.id.nav_home -> findNavController(R.id.nav_host_fragment_content_home).navigate(R.id.nav_home)
-//
-//        }
-//
-//            true
-//        }
-
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_home)
