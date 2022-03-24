@@ -24,7 +24,8 @@ class bottom_sheet_fragment : BottomSheetDialogFragment() {
     lateinit var user: Nutration_data
     lateinit var adapter: details_adapter
     val data =
-        listOf("1/ teaspoon ginger paste",
+        listOf(
+            "1/ teaspoon ginger paste",
             "\n2/ teaspoon red chilli powder",
             "\n3/ teaspoon cumin powder salt as required",
             "\n4/ cup hung curd",
@@ -32,7 +33,9 @@ class bottom_sheet_fragment : BottomSheetDialogFragment() {
             "\n6/ teaspoon coriander powder",
             "\n7/ teaspoon powdered black pepper",
             "\n8/ teaspoon garam masala powder",
-            "\n9/ 350 gm chicken")
+            "\n9/ 350 gm chicken"
+        )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -52,8 +55,10 @@ class bottom_sheet_fragment : BottomSheetDialogFragment() {
             false
         )
         val dialog = dialog as BottomSheetDialog
-        dialog.behavior.state = BottomSheetBehavior.STATE_DRAGGING
-
+        dialog.behavior.state = BottomSheetBehavior.STATE_EXPANDED
+        binding.btnCollabse.setOnClickListener {
+            dialog.behavior.state = BottomSheetBehavior.STATE_HIDDEN
+        }
 
         return binding.root
     }
@@ -73,15 +78,14 @@ class bottom_sheet_fragment : BottomSheetDialogFragment() {
         binding.txtIntegrate.text = user.title
         binding.txtTime.text = user.time
         binding.imgTime.setImageResource(user.img_time)
-
+        binding.txtDirection.text = user.txt_direction
+        binding.txt18.text = user.dir
 
 
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
-
 
 
     }

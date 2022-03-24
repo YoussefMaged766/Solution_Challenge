@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">solution challenge</string>
+    <string name="app_name">Fitness Plan</string>
     <string name="fitness">Fitness Plan</string>
     <string name="Create_account">Create account</string>
     <string name="google">Sign up with google</string>
@@ -36,66 +36,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="email_hint">email-hint</string>
     <!--    meals_home-->
-    <string-array name="ph1">
-        <item> 1/ teaspoon ginger paste</item>
-        <item>2/ teaspoon red chilli powder</item>
-        <item>3/ teaspoon cumin powder salt as required</item>
-        <item>4/ cup hung curd</item>
-        <item>5/ teaspoon garlic paste</item>
-        <item>6/ teaspoon coriander powder</item>
-        <item>7/ teaspoon powdered black pepper</item>
-        <item>8/ teaspoon garam masala powder</item>
-        <item>9/ 350 gm chicken</item>
-    </string-array>
-<!--    <string name="ph1">-->
-<!--       1/ teaspoon ginger paste\n2/ teaspoon red chilli powder\n3/ teaspoon cumin powder salt as required\n4/ cup hung curd\n5/ teaspoon garlic paste\n6/ teaspoon coriander powder\n7/ teaspoon powdered black pepper\n8/ teaspoon garam masala powder\n9/ 350 gm chicken-->
-<!--    </string>-->
-    <string name="ph2">
 
-    </string>
-    <string name="ph3">
 
-    </string>
-    <!--exersise_home-->
-    <string name="ph4">
-
-    </string>
-    <string name="ph5">
-
-    </string>
-    <string name="ph6">
-
-    </string>
-    <!--Gyn_exersise-->
-    <string name="ph7">
-
-    </string>
-    <string name="ph8">
-
-    </string>
-    <string name="ph9">
-
-    </string>
-    <!--vegan_exersise-->
-    <string name="ph10">
-
-    </string>
-    <string name="ph11">
-
-    </string>
-    <string name="ph12">
-
-    </string>
-    <!--Atkins_exersise-->
-    <string name="ph13">
-
-    </string>
-    <string name="ph14">
-
-    </string>
-    <string name="ph15">
-
-    </string>
 
 
 </resources>

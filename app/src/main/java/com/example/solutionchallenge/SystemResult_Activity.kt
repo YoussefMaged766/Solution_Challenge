@@ -30,7 +30,7 @@ class SystemResult_Activity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var userArrayList: ArrayList<Nutration_data>
     private val PREFS_NAME = "kotlincod"
-    lateinit var couponexpires:String
+    lateinit var couponexpires: String
 //    val data =
 ////        listOf("1/ teaspoon ginger paste",
 ////            "\n2/ teaspoon red chilli powder",
@@ -42,7 +42,7 @@ class SystemResult_Activity : AppCompatActivity() {
 ////            "\n8/ teaspoon garam masala powder",
 ////            "\n9/ 350 gm chicken")
 
-    lateinit var data :meal_details
+    lateinit var data: meal_details
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,18 +58,63 @@ class SystemResult_Activity : AppCompatActivity() {
         data = meal_details()
         adapter_Nutration = Nutration_adapter(
             arrayListOf(
-                Nutration_data("Grilled chiken", R.drawable.istockphoto6, details_adapter(data.data),"1h 10min" , "Ingredients", R.drawable.ic_baseline_access_time_24),
-                Nutration_data("Chicken & poultry", R.drawable.istockphoto3,details_adapter(data.data2),"40min" , "Ingredients", R.drawable.ic_baseline_access_time_24),
-                Nutration_data("High fat veggies", R.drawable.istockphoto5,details_adapter(data.data3),"1h" , "Ingredients", R.drawable.ic_baseline_access_time_24)
+                Nutration_data(
+                    "Grilled chiken",
+                    R.drawable.istockphoto6,
+                    details_adapter(data.data),
+                    "Ingredients",
+                    R.drawable.ic_baseline_access_time_24,
+                    "1h 10min",
+                    data.dir_data1,
+                    "Directions"
+                ),
+                Nutration_data(
+                    "Chicken & poultry",
+                    R.drawable.istockphoto3,
+                    details_adapter(data.data2),
+                    "Ingredients",
+                    R.drawable.ic_baseline_access_time_24,
+                    "40min",
+                    data.dir_data2,
+                    "Directions"
+                ),
+                Nutration_data(
+                    "High fat veggies",
+                    R.drawable.istockphoto5,
+                    details_adapter(data.data3),
+                    "Ingredients",
+                    R.drawable.ic_baseline_access_time_24,
+                    "1h",
+                    data.dir_data3,
+                    "Directions"
+                )
 
             )
         )
 
         adapter_Exercises = Nutration_adapter(
             arrayListOf(
-                Nutration_data("Side planks", R.drawable.istockphoto2,details_adapter(data.ex_data1),"","Steps",0),
-                Nutration_data("Squats ", R.drawable.istockphoto4,details_adapter(data.ex_data2),"","Steps",0),
-                Nutration_data("Push ups", R.drawable.istockphoto7,details_adapter(data.ex_data3),"","Steps",0)
+                Nutration_data(
+                    "Side planks",
+                    R.drawable.istockphoto2,
+                    details_adapter(data.ex_data1),
+                    "Steps",
+                    0
+                ),
+                Nutration_data(
+                    "Squats ",
+                    R.drawable.istockphoto4,
+                    details_adapter(data.ex_data2),
+                    "Steps",
+                    0
+                ),
+                Nutration_data(
+                    "Push ups",
+                    R.drawable.istockphoto7,
+                    details_adapter(data.ex_data3),
+                    "Steps",
+                    0
+                )
 
             )
         )
@@ -87,11 +132,29 @@ class SystemResult_Activity : AppCompatActivity() {
 
         if (tall > 50 && tall < 100) {
 
-            var myObject: Nutration_adapter =  Nutration_adapter(
+            var myObject: Nutration_adapter = Nutration_adapter(
                 arrayListOf(
-                    Nutration_data("Side planks", R.drawable.istockphoto2,details_adapter(data.ex_data1),"","Steps",0),
-                    Nutration_data("Squats ", R.drawable.istockphoto4,details_adapter(data.ex_data2),"","Steps",0),
-                    Nutration_data("Push ups", R.drawable.istockphoto7,details_adapter(data.ex_data3),"","Steps",0)
+                    Nutration_data(
+                        "Side planks",
+                        R.drawable.istockphoto2,
+                        details_adapter(data.ex_data1),
+                        "Steps",
+                        0
+                    ),
+                    Nutration_data(
+                        "Squats ",
+                        R.drawable.istockphoto4,
+                        details_adapter(data.ex_data2),
+                        "Steps",
+                        0
+                    ),
+                    Nutration_data(
+                        "Push ups",
+                        R.drawable.istockphoto7,
+                        details_adapter(data.ex_data3),
+                        "Steps",
+                        0
+                    )
 
                 )
             )
@@ -102,14 +165,40 @@ class SystemResult_Activity : AppCompatActivity() {
             prefsEditor.putString("MyObject", json)
             prefsEditor.apply()
 //            recyclerExercises.adapter = adapter_Exercises
-        }
-        else if (tall > 110 && tall < 150) {
+        } else if (tall > 110 && tall < 150) {
 
-            var myObject: Nutration_adapter =  Nutration_adapter(
+            var myObject: Nutration_adapter = Nutration_adapter(
                 arrayListOf(
-                    Nutration_data("Grilled chiken", R.drawable.istockphoto6, details_adapter(data.data),"1h 10min" , "Ingredients", R.drawable.ic_baseline_access_time_24),
-                    Nutration_data("Chicken & poultry", R.drawable.istockphoto3,details_adapter(data.data2),"40min" , "Ingredients", R.drawable.ic_baseline_access_time_24),
-                    Nutration_data("High fat veggies", R.drawable.istockphoto5,details_adapter(data.data3),"1h" , "Ingredients", R.drawable.ic_baseline_access_time_24)
+                    Nutration_data(
+                        "Grilled chiken",
+                        R.drawable.istockphoto6,
+                        details_adapter(data.data),
+                        "1h 10min",
+                        R.drawable.ic_baseline_access_time_24,
+                        "Ingredients",
+                        "",
+                        "Directions"
+                    ),
+                    Nutration_data(
+                        "Chicken & poultry",
+                        R.drawable.istockphoto3,
+                        details_adapter(data.data2),
+                        "40min",
+                        R.drawable.ic_baseline_access_time_24,
+                        "Ingredients",
+                        "",
+                        "Directions"
+                    ),
+                    Nutration_data(
+                        "High fat veggies",
+                        R.drawable.istockphoto5,
+                        details_adapter(data.data3),
+                        "1h",
+                        R.drawable.ic_baseline_access_time_24,
+                        "Ingredients",
+                        "",
+                        "Directions"
+                    )
                 )
             )
 
@@ -125,7 +214,7 @@ class SystemResult_Activity : AppCompatActivity() {
         val json1: String = sharedPref.getString("MyObject", "").toString()
         val obj: Nutration_adapter = gson.fromJson(json1, Nutration_adapter::class.java)
         recycler_Nutration.adapter = obj
-        Log.e( "onCreate: ",json1 )
+        Log.e("onCreate: ", json1)
 
 
 //        recycler_Nutration.adapter = adapter_Nutration
@@ -136,16 +225,19 @@ class SystemResult_Activity : AppCompatActivity() {
 
             val date = Calendar.getInstance()
             var couponcreated = dateFormat.format(date.getTime())
-            database.child("users").child(auth.uid.toString()).child("start_date").setValue(couponcreated)
+            database.child("users").child(auth.uid.toString()).child("start_date")
+                .setValue(couponcreated)
 
-            date.add(Calendar.DATE,91)
+            date.add(Calendar.DATE, 91)
 
             couponexpires = dateFormat.format(date.getTime());
             var futureDate: Date = dateFormat.parse(couponexpires);
-            database.child("users").child(auth.uid.toString()).child("end_date").setValue(couponexpires)
-            database.child("users").child(auth.uid.toString()).child("end_date_milli").setValue(futureDate.time)
+            database.child("users").child(auth.uid.toString()).child("end_date")
+                .setValue(couponexpires)
+            database.child("users").child(auth.uid.toString()).child("end_date_milli")
+                .setValue(futureDate.time)
 
-            startActivity(Intent(this , TimerActivity::class.java))
+            startActivity(Intent(this, TimerActivity::class.java))
             finish()
 
 

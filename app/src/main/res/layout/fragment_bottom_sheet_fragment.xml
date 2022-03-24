@@ -8,7 +8,7 @@
     </data>
 
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -33,6 +33,19 @@
                     android:scaleType="centerCrop"
                     android:textSize="30sp"
                     app:layout_constraintTop_toTopOf="parent" />
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btn_collabse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_margin="10dp"
+                    app:backgroundTint="#fe8312"
+                    app:tint="@color/white"
+                    app:srcCompat="@drawable/ic_baseline_close_24"
+                    app:fabSize="mini"
+
+                    />
 
                 <TextView
                     android:id="@+id/txt_name_sheet"
@@ -89,9 +102,38 @@
                     android:orientation="vertical"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintTop_toBottomOf="@id/txt_integrate"
+                    app:layout_constraintBottom_toTopOf="@id/txt18"
                     app:spanCount="5"
-                    tools:listitem="@layout/meal_details_item" />
+                    />
+
+                <TextView
+                    android:id="@+id/txt18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/recycler_details"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:textColor="@color/black"
+                    android:textSize="30sp"
+                    android:text="Directions"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/tahoma_bold"
+                    />
+                <TextView
+                    android:id="@+id/txt_direction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/txt18"
+                    android:textSize="17sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/tahoma_regular"
+                    android:text="fsdfasd"
+                    android:lineSpacingExtra="5dp"
+                    android:layout_margin="10dp"
+                    android:justificationMode="inter_word"
+                    />
+
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 </layout>

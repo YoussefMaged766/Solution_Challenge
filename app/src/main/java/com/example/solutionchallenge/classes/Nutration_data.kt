@@ -8,8 +8,11 @@ data class Nutration_data(
     val name: String,
     val img: Int,
     val details: details_adapter,
-    var time: String,
     var title: String,
-    var img_time:Int
+    var img_time:Int,
+    var time: String?=null,
+    var txt_direction :String?=null,
+    var dir :String?=null
+
 ) : Serializable
 

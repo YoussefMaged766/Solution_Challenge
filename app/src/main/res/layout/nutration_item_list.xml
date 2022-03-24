@@ -10,10 +10,9 @@
         android:layout_height="120dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="15dp"
-        android:scaleType="fitXY"
+        android:scaleType="centerCrop"
         android:src="@drawable/istockphoto2"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -27,7 +26,6 @@
         android:background="@drawable/text_background_list"
         android:padding="12dp"
         android:text="Grilled chiken"
-
         android:layout_marginEnd="15dp"
         android:gravity="center"
         android:textColor="@color/white"

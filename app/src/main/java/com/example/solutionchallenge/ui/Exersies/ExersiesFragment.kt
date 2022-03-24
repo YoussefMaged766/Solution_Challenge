@@ -23,16 +23,7 @@ class ExersiesFragment : Fragment() {
     lateinit var adapter_home: Nutration_adapter
     lateinit var adapter_gym: Nutration_adapter
 
-//    val data =
-//        listOf("1/ teaspoon ginger paste",
-//            "\n2/ teaspoon red chilli powder",
-//            "\n3/ teaspoon cumin powder salt as required",
-//            "\n4/ cup hung curd",
-//            "\n5/ teaspoon garlic paste",
-//            "\n6/ teaspoon coriander powder",
-//            "\n7/ teaspoon powdered black pepper",
-//            "\n8/ teaspoon garam masala powder",
-//            "\n9/ 350 gm chicken")
+
     lateinit var data :meal_details
 
     override fun onCreateView(
@@ -44,16 +35,16 @@ class ExersiesFragment : Fragment() {
 data = meal_details()
         adapter_home = Nutration_adapter(
             arrayListOf(
-                Nutration_data("Side planks", R.drawable.istockphoto2, details_adapter(data.data),"","Steps",0),
-                Nutration_data("Squats ", R.drawable.istockphoto4,details_adapter(data.data2),"","Steps",0),
-                Nutration_data("Push ups", R.drawable.istockphoto7,details_adapter(data.ex_data3),"","Steps",0)
+                Nutration_data("Side planks", R.drawable.istockphoto2, details_adapter(data.data),"Steps",0),
+                Nutration_data("Squats ", R.drawable.istockphoto4,details_adapter(data.data2),"Steps",0),
+                Nutration_data("Push ups", R.drawable.istockphoto7,details_adapter(data.ex_data3),"Steps",0)
             )
         )
 
         adapter_gym = Nutration_adapter(arrayListOf(
-            Nutration_data("Cardio", R.drawable.istockphoto8,details_adapter(data.ex_data4),"","Steps",0),
-            Nutration_data("Bicycle ", R.drawable.istockphoto9,details_adapter(data.ex_data5),"","Steps",0),
-            Nutration_data("Dumble", R.drawable.istockphoto10,details_adapter(data.ex_data6),"","Steps",0)
+            Nutration_data("Cardio", R.drawable.istockphoto8,details_adapter(data.ex_data4),"Steps",0),
+            Nutration_data("Bicycle ", R.drawable.istockphoto9,details_adapter(data.ex_data5),"Steps",0),
+            Nutration_data("Dumble", R.drawable.istockphoto10,details_adapter(data.ex_data6),"Steps",0)
         ))
 
         binding.recyclerHomeExersies.adapter = adapter_home

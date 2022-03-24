@@ -36,25 +36,32 @@ class MealFragment : Fragment() {
                     "Grilled chicken",
                     R.drawable.istockphoto6,
                     details_adapter(data.data),
-                    "1h 10min",
                     "Ingredients",
-                    R.drawable.ic_baseline_access_time_24
+                    R.drawable.ic_baseline_access_time_24,
+                    "1h 10min",
+                    data.dir_data1,
+                    "Directions"
                 ),
                 Nutration_data(
                     "Chicken & poultry",
                     R.drawable.istockphoto3,
                     details_adapter(data.data2),
-                    "40min",
                     "Ingredients",
-                    R.drawable.ic_baseline_access_time_24
+                    R.drawable.ic_baseline_access_time_24,
+                    "40min",
+                    data.dir_data2,
+                    "Directions"
                 ),
                 Nutration_data(
                     "High fat veggies",
                     R.drawable.istockphoto5,
                     details_adapter(data.data3),
-                    "1h",
                     "Ingredients",
-                    R.drawable.ic_baseline_access_time_24
+                    R.drawable.ic_baseline_access_time_24,
+                    "1h",
+                    data.dir_data3,
+                    "Directions"
+
                 )
 
             )
@@ -66,25 +73,32 @@ class MealFragment : Fragment() {
                     "Vegan salad bowl",
                     R.drawable.istockphoto15,
                     details_adapter(data.data4),
-                    "20min",
                     "Ingredients",
-                    R.drawable.ic_baseline_access_time_24
+                    R.drawable.ic_baseline_access_time_24,
+                    "20min",
+                    data.dir_data4,
+                    "Directions"
+
                 ),
                 Nutration_data(
                     "Fresh spring rolls ",
                     R.drawable.istockphoto11,
                     details_adapter(data.data5),
-                    "1h 10min",
                     "Ingredients",
-                    R.drawable.ic_baseline_access_time_24
+                    R.drawable.ic_baseline_access_time_24,
+                    "1h 10min",
+                    data.dir_data5,
+                    "Directions"
                 ),
                 Nutration_data(
                     "Cooked rice with\n" + "   vegetables",
                     R.drawable.istockphoto16,
                     details_adapter(data.data6),
-                    "50min",
                     "Ingredients",
-                    R.drawable.ic_baseline_access_time_24
+                    R.drawable.ic_baseline_access_time_24,
+                    "50min",
+                    data.dir_data6,
+                    "Directions"
                 )
 
             )
@@ -95,25 +109,33 @@ class MealFragment : Fragment() {
                     "Orange fillet\n" + "with brocoli",
                     R.drawable.istockphoto12,
                     details_adapter(data.data7),
+                     "Ingredients",
+                    R.drawable.ic_baseline_access_time_24,
                     "35min",
-                    "Ingredients",
-                    R.drawable.ic_baseline_access_time_24
+                    data.dir_data7,
+                    "Directions"
                 ),
                 Nutration_data(
                     "Mushroom pasta ",
                     R.drawable.istockphoto14,
                     details_adapter(data.data8),
-                    "1h 10min",
                     "Ingredients",
-                    R.drawable.ic_baseline_access_time_24
+                    R.drawable.ic_baseline_access_time_24,
+                    "1h 10min",
+                    data.dir_data8,
+                    "Directions"
+
                 ),
                 Nutration_data(
                     "Sauteed chicken",
                     R.drawable.istockphoto13,
                     details_adapter(data.data9),
+                     "Ingredients",
+                    R.drawable.ic_baseline_access_time_24,
                     "1h 10min",
-                    "Ingredients",
-                    R.drawable.ic_baseline_access_time_24
+                    data.dir_data9,
+                    "Directions"
+
                 )
 
             )
