@@ -23,12 +23,10 @@
             android:exported="false"
             android:label="@string/title_activity_home"
             android:theme="@style/Theme.SolutionChallenge.NoActionBar" />
-        <activity
-            android:name=".SystemResult_Activity"
-            android:exported="false" />
-        <activity
-            android:name=".SystemInfo_Activity"
-            android:exported="false" />
+
+<!--        <activity-->
+<!--            android:name=".SystemInfo_Activity"-->
+<!--            android:exported="false" />-->
         <activity
             android:name=".UserProfile_Activity"
             android:exported="false" />

@@ -49,6 +49,31 @@
     android:id="@+id/nav_sheet"
     android:name="com.example.solutionchallenge.bottom_sheet_fragment"
     tools:layout="@layout/fragment_bottom_sheet_fragment"/>
+    <fragment
+        android:id="@+id/systemResult_Activity"
+        android:name="com.example.solutionchallenge.SystemResult_Activity"
+        android:label="Result"
+        tools:layout="@layout/activity_system_result" >
+        <argument
+            android:name="system_result"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_systemResult_Activity_to_nav_sheet"
+            app:destination="@id/nav_sheet" />
+        <action
+            android:id="@+id/action_systemResult_Activity_to_nav_Diet"
+            app:destination="@id/nav_Diet" />
+    </fragment>
+    <fragment
+        android:id="@+id/systemInfo_Activity"
+        android:name="com.example.solutionchallenge.SystemInfo_Activity"
+        android:label="Pick plan"
+        tools:layout="@layout/activity_system_info" >
+        <action
+            android:id="@+id/action_systemInfo_Activity_to_systemResult_Activity"
+            app:destination="@id/systemResult_Activity" />
+    </fragment>
 
 
 </navigation>

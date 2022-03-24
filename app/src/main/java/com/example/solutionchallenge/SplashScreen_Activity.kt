@@ -22,6 +22,6 @@ class SplashScreen_Activity : AppCompatActivity() {
 
         }, 3000)
 
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
     }
     }

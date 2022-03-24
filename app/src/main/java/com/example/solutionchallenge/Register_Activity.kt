@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.example.solutionchallenge.classes.Toast
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
@@ -39,6 +40,7 @@ class Register_Activity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance().reference
         val firebaseUser: FirebaseUser? = auth.currentUser

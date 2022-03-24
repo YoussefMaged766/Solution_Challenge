@@ -93,7 +93,9 @@ class HomeFragment : Fragment() {
             database.child("users").child(auth.uid.toString()).addListenerForSingleValueEvent(object :ValueEventListener{
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.exists()){
-                        startActivity( Intent(context, SystemInfo_Activity::class.java))
+                        val navHostFragment = activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_fragment_content_home) as NavHostFragment
+                        val navController = navHostFragment.navController
+                        navController.navigate(R.id.systemInfo_Activity)
                     }
                     else{
                         Snackbar.make(binding.containerHome, "you should sign in first", Snackbar.LENGTH_LONG)

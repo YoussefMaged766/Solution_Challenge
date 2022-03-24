@@ -7,6 +7,7 @@ import android.text.TextUtils.isEmpty
 import android.util.Patterns
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.example.solutionchallenge.classes.Toast
 import com.example.solutionchallenge.databinding.ActivitySignInBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -24,6 +25,7 @@ class Sign_In_Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
+
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
         database = FirebaseDatabase.getInstance().reference
