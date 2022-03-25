@@ -1,8 +1,8 @@
 package com.example.solutionchallenge
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.R.color
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,15 +11,14 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.solutionchallenge.adapter.Nutration_adapter
-import com.example.solutionchallenge.adapter.details_adapter
-import com.example.solutionchallenge.classes.Nutration_data
 import com.example.solutionchallenge.classes.meal_details
 import com.example.solutionchallenge.databinding.ActivitySystemInfoBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
-class SystemInfo_Activity : Fragment() {
+
+class SystemInfo_Fragment : Fragment() {
     lateinit var btn_submit: Button
     lateinit var spinner: Spinner
     lateinit var adapter1: Nutration_adapter
@@ -29,6 +28,7 @@ class SystemInfo_Activity : Fragment() {
     private lateinit var auth: FirebaseAuth
     lateinit var data: meal_details
     lateinit var binding :ActivitySystemInfoBinding
+
 //    val data =
 //        listOf("1/ teaspoon ginger paste",
 //            "\n2/ teaspoon red chilli powder",
@@ -62,6 +62,7 @@ class SystemInfo_Activity : Fragment() {
         binding.spinnerDisease.adapter = adapter
         data = meal_details()
 
+
 //        adapter1 = Nutration_adapter(
 //            arrayListOf(
 //                Nutration_data("Side planks", R.drawable.istockphoto2, details_adapter(data .ex_data1),"Steps",0),
@@ -71,15 +72,28 @@ class SystemInfo_Activity : Fragment() {
 //            )
 //        )
 
-        binding.btnSubmitSystem.setOnClickListener {
+        binding.spinnerDisease.setOnItemSelectedListener(object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View, position: Int, id: Long) {
 
-//            var i = Intent(this, SystemResult_Activity::class.java)
-            var tall = Integer.parseInt(binding.tallEditSystem.text.toString())
-//            i.putExtra("tall", tall)
-//            startActivity(i)
-//            finish()
+                var item: String = binding.spinnerDisease.getSelectedItem().toString()
+                if (item.equals("alo")){
+                    binding.txtItem.text = item
+
+
+                }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+        })
+        binding.btnSubmitSystem.setOnClickListener {
             var bundle = Bundle()
+
+            var tall = Integer.parseInt(binding.tallEditSystem.text.toString())
+            bundle.putString("spinner" , binding.txtItem.text.toString())
+
+
             bundle.putInt("system_result", tall)
+            Log.e( "onCreateView:1 ",bundle.toString() )
             it.findNavController().navigate(R.id.systemResult_Activity, bundle)
 
             database.child("users").child(auth.uid.toString()).child("tall")
@@ -137,6 +151,5 @@ class SystemInfo_Activity : Fragment() {
 //    txt_tall = findViewById(R.id.tall_edit_system)
 //    txt_weight = findViewById(R.id.weight_edit_system)
 //
-
 
 }

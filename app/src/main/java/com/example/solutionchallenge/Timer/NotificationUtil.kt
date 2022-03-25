@@ -12,7 +12,7 @@ import android.net.Uri
 import android.os.Build
 import androidx.core.app.NotificationCompat
 import com.example.solutionchallenge.R
-import com.example.solutionchallenge.SystemInfo_Activity
+
 import com.example.solutionchallenge.TimerActivity
 import com.example.solutionchallenge.constants.AppConstants
 import java.text.SimpleDateFormat

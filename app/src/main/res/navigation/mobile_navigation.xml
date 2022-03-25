@@ -51,7 +51,7 @@
     tools:layout="@layout/fragment_bottom_sheet_fragment"/>
     <fragment
         android:id="@+id/systemResult_Activity"
-        android:name="com.example.solutionchallenge.SystemResult_Activity"
+        android:name="com.example.solutionchallenge.SystemResult_fragment"
         android:label="Result"
         tools:layout="@layout/activity_system_result" >
         <argument
@@ -67,12 +67,15 @@
     </fragment>
     <fragment
         android:id="@+id/systemInfo_Activity"
-        android:name="com.example.solutionchallenge.SystemInfo_Activity"
+        android:name="com.example.solutionchallenge.SystemInfo_Fragment"
         android:label="Pick plan"
         tools:layout="@layout/activity_system_info" >
         <action
             android:id="@+id/action_systemInfo_Activity_to_systemResult_Activity"
             app:destination="@id/systemResult_Activity" />
+        <argument
+            android:name="spinner"
+            app:argType="string" />
     </fragment>
 
 

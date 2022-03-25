@@ -28,7 +28,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-class SystemResult_Activity : Fragment() {
+class SystemResult_fragment : Fragment() {
 
     lateinit var sharedPref: SharedPreferences
     private lateinit var database: DatabaseReference
@@ -62,9 +62,11 @@ class SystemResult_Activity : Fragment() {
 
 
         var tall = arguments?.getInt("system_result", 0)
+        var disease = arguments?.getString("spinner")
+        Log.e ("onCreateView: ",disease.toString()+tall.toString() )
 
         if (tall != null) {
-            if (tall > 50 && tall < 100) {
+            if (tall in 50..100) {
 
                 var myObject: Nutration_adapter = Nutration_adapter(
                     arrayListOf(
@@ -99,7 +101,7 @@ class SystemResult_Activity : Fragment() {
                 prefsEditor.putString("MyObject", json)
                 prefsEditor.apply()
                 binding.recyclerExercises.adapter = myObject
-            } else if (tall > 110 && tall < 150) {
+            } else if (tall in 101..150) {
 
                 var myObject: Nutration_adapter = Nutration_adapter(
                     arrayListOf(

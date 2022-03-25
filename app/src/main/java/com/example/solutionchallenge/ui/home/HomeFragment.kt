@@ -13,7 +13,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.PagerSnapHelper
 import com.example.solutionchallenge.R
 import com.example.solutionchallenge.Register_Activity
-import com.example.solutionchallenge.SystemInfo_Activity
+
 import com.example.solutionchallenge.adapter.Nutration_adapter
 import com.example.solutionchallenge.adapter.details_adapter
 import com.example.solutionchallenge.classes.Nutration_data
