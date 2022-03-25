@@ -79,7 +79,6 @@ class SystemInfo_Fragment : Fragment() {
                 if (item.equals("alo")){
                     binding.txtItem.text = item
 
-
                 }
             }
 
@@ -89,10 +88,11 @@ class SystemInfo_Fragment : Fragment() {
             var bundle = Bundle()
 
             var tall = Integer.parseInt(binding.tallEditSystem.text.toString())
-            bundle.putString("spinner" , binding.txtItem.text.toString())
-
 
             bundle.putInt("system_result", tall)
+
+            bundle.putString("spinner" , binding.txtItem.text.toString())
+
             Log.e( "onCreateView:1 ",bundle.toString() )
             it.findNavController().navigate(R.id.systemResult_Activity, bundle)
 

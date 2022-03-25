@@ -11,8 +11,8 @@ data class Nutration_data(
     var title: String,
     var img_time:Int,
     var time: String?=null,
-    var txt_direction :String?=null,
-    var dir :String?=null
+    var txt_direction:String?=null,
+    var dir:String?=null
 
 ) : Serializable
 

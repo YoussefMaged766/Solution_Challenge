@@ -49,6 +49,7 @@
     android:id="@+id/nav_sheet"
     android:name="com.example.solutionchallenge.bottom_sheet_fragment"
     tools:layout="@layout/fragment_bottom_sheet_fragment"/>
+
     <fragment
         android:id="@+id/systemResult_Activity"
         android:name="com.example.solutionchallenge.SystemResult_fragment"
@@ -76,6 +77,7 @@
         <argument
             android:name="spinner"
             app:argType="string" />
+
     </fragment>
 
 

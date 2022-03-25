@@ -63,9 +63,10 @@
                     android:background="@drawable/system_style"
                     android:fontFamily="@font/tahoma_regular"
                     android:padding="8dp"
-                    tools:text="15"
                     android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    android:inputType="number"
+                    android:hint="your tall in CM"/>
 
 
             </LinearLayout>
@@ -101,7 +102,9 @@
                     android:padding="8dp"
                     tools:text="15"
                     android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    android:inputType="number"
+                    android:hint="your weight in KG"/>
 
             </LinearLayout>
 
@@ -170,8 +173,8 @@
                     tools:text="yoer766@gmail.com"
                     android:textColor="@color/black"
                     android:textSize="15sp"
-                    android:inputType="textEmailAddress"
-                    app:drawableEndCompat="@drawable/ic_baseline_edit_24" />
+                    android:inputType="number"
+                    />
 
 
             </LinearLayout>

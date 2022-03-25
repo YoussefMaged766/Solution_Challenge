@@ -1,21 +1,15 @@
 package com.example.solutionchallenge
 
 import android.content.Context
-import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.recyclerview.widget.RecyclerView
 import com.example.solutionchallenge.adapter.Nutration_adapter
 import com.example.solutionchallenge.adapter.details_adapter
 import com.example.solutionchallenge.classes.Nutration_data
@@ -23,10 +17,8 @@ import com.example.solutionchallenge.classes.meal_details
 import com.example.solutionchallenge.databinding.ActivitySystemResultBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import com.google.gson.Gson
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
 
 class SystemResult_fragment : Fragment() {
 
@@ -35,7 +27,7 @@ class SystemResult_fragment : Fragment() {
     private lateinit var auth: FirebaseAuth
     private val PREFS_NAME = "kotlincod"
     lateinit var couponexpires: String
-    lateinit var binding:ActivitySystemResultBinding
+    lateinit var binding: ActivitySystemResultBinding
 //    val data =
 ////        listOf("1/ teaspoon ginger paste",
 ////            "\n2/ teaspoon red chilli powder",
@@ -53,8 +45,9 @@ class SystemResult_fragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.activity_system_result, container, false)
+    ): View {
+        binding =
+            DataBindingUtil.inflate(inflater, R.layout.activity_system_result, container, false)
         database = FirebaseDatabase.getInstance().reference
         auth = FirebaseAuth.getInstance()
         sharedPref = requireActivity().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
@@ -63,7 +56,8 @@ class SystemResult_fragment : Fragment() {
 
         var tall = arguments?.getInt("system_result", 0)
         var disease = arguments?.getString("spinner")
-        Log.e ("onCreateView: ",disease.toString()+tall.toString() )
+        Log.e("onCreateView: ", disease.toString() + tall.toString())
+
 
         if (tall != null) {
             if (tall in 50..100) {
@@ -94,14 +88,14 @@ class SystemResult_fragment : Fragment() {
 
                     )
                 )
-
-                var prefsEditor: SharedPreferences.Editor = sharedPref.edit()
-                var gson: Gson = Gson()
-                var json: String = gson.toJson(myObject)
-                prefsEditor.putString("MyObject", json)
-                prefsEditor.apply()
+//
+//                var prefsEditor: SharedPreferences.Editor = sharedPref.edit()
+//                var gson: Gson = Gson()
+//                var json: String = gson.toJson(myObject)
+//                prefsEditor.putString("MyObject", json)
+//                prefsEditor.apply()
                 binding.recyclerExercises.adapter = myObject
-            } else if (tall in 101..150) {
+            } else if (tall in 101..180) {
 
                 var myObject: Nutration_adapter = Nutration_adapter(
                     arrayListOf(
@@ -138,12 +132,52 @@ class SystemResult_fragment : Fragment() {
                     )
                 )
 
-                var prefsEditor: SharedPreferences.Editor = sharedPref.edit()
-                var gson: Gson = Gson()
-                var json: String = gson.toJson(myObject)
-                prefsEditor.putString("MyObject", json)
-                prefsEditor.apply()
+//                var prefsEditor: SharedPreferences.Editor = sharedPref.edit()
+//                var gson: Gson = Gson()
+//                var json: String = gson.toJson(myObject)
+//                prefsEditor.putString("MyObject", json)
+//                prefsEditor.apply()
                 binding.recyclerNutration.adapter = myObject
+
+//                if (disease.equals("heart")) {
+//                    if (tall in 100..150) {
+//                        var object1 = Nutration_adapter(
+//                            arrayListOf(
+//                                Nutration_data(
+//                                    "Vegan salad bowl",
+//                                    R.drawable.istockphoto15,
+//                                    details_adapter(data.data4),
+//                                    "Ingredients",
+//                                    R.drawable.ic_baseline_access_time_24,
+//                                    "20min",
+//                                    data.dir_data4,
+//                                    "Directions"
+//
+//                                ), Nutration_data(
+//                                    "Cooked rice with\n" + "   vegetables",
+//                                    R.drawable.istockphoto16,
+//                                    details_adapter(data.data6),
+//                                    "Ingredients",
+//                                    R.drawable.ic_baseline_access_time_24,
+//                                    "50min",
+//                                    data.dir_data6,
+//                                    "Directions"
+//                                )
+//                            )
+//                        )
+//                        var object2 = Nutration_adapter(arrayListOf(
+//
+//                                Nutration_data(
+//                                    "Squats ", R.drawable.istockphoto4,details_adapter(data.data2),"Steps",0),
+//                            Nutration_data("Bicycle ", R.drawable.istockphoto9,details_adapter(data.ex_data5),"Steps",0))
+//                        )
+//                        binding.recyclerNutration.adapter = object1
+//                        binding.recyclerExercises.adapter = object2
+//                    }
+//
+//                } else if (disease.equals("heart2")) {
+//
+//                }
             }
         }
         binding.btnGetStarted.setOnClickListener {
@@ -172,8 +206,6 @@ class SystemResult_fragment : Fragment() {
         return binding.root
 
     }
-
-
 
 
 }

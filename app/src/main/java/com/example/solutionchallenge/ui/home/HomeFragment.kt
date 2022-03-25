@@ -5,10 +5,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.PagerSnapHelper
 import com.example.solutionchallenge.R
@@ -17,16 +15,11 @@ import com.example.solutionchallenge.Register_Activity
 import com.example.solutionchallenge.adapter.Nutration_adapter
 import com.example.solutionchallenge.adapter.details_adapter
 import com.example.solutionchallenge.classes.Nutration_data
-import com.example.solutionchallenge.classes.Toast
 import com.example.solutionchallenge.classes.meal_details
 import com.example.solutionchallenge.databinding.FragmentHomeBinding
-import com.example.solutionchallenge.ui.Exersies.ExersiesFragment
-import com.example.solutionchallenge.ui.meal.MealFragment
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import com.sothree.slidinguppanel.SlidingUpPanelLayout
 
 class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding

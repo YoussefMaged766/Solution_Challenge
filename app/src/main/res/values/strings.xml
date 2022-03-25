@@ -14,10 +14,12 @@
     <string name="or">Or</string>
 
     <string-array name="spinner">
+        <item> none</item>
         <item> alo</item>
         <item> dsfgsd</item>
         <item> alsdfgo</item>
         <item> adsfgslo</item>
+
 
     </string-array>
     <string name="title_activity_home">Home_Activity</string>
