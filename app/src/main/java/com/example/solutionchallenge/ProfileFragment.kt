@@ -83,7 +83,7 @@ class ProfileFragment : Fragment() {
                         ) == PermissionChecker.PERMISSION_DENIED
                     ) {
                         val permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
-                        requestPermissions(permissions, UserProfile_Activity.PERMISSION_CODE)
+                        requestPermissions(permissions, PERMISSION_CODE)
                     } else {
                         chooseImageGallery()
 
@@ -225,7 +225,7 @@ class ProfileFragment : Fragment() {
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         when (requestCode) {
-            UserProfile_Activity.PERMISSION_CODE -> {
+            PERMISSION_CODE -> {
                 if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     chooseImageGallery()
                 } else {
