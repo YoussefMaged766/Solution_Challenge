@@ -7,9 +7,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
+import androidx.activity.addCallback
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.solutionchallenge.adapter.Nutration_adapter
 import com.example.solutionchallenge.adapter.details_adapter
 import com.example.solutionchallenge.classes.Nutration_data
@@ -95,7 +98,7 @@ class SystemResult_fragment : Fragment() {
 //                prefsEditor.putString("MyObject", json)
 //                prefsEditor.apply()
                 binding.recyclerExercises.adapter = myObject
-            } else if (tall in 101..180) {
+            } else if (tall in 101..200) {
 
                 var myObject: Nutration_adapter = Nutration_adapter(
                     arrayListOf(
@@ -202,10 +205,20 @@ class SystemResult_fragment : Fragment() {
 
         }
 
+//        val callback = requireActivity().onBackPressedDispatcher.addCallback(requireActivity()) {
+//
+//        }
+//
+//
+//        callback.handleOnBackPressed()
+
+
 
         return binding.root
 
     }
+
+
 
 
 }

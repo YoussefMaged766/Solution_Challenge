@@ -15,10 +15,10 @@
 
     <string-array name="spinner">
         <item> none</item>
-        <item> alo</item>
-        <item> dsfgsd</item>
-        <item> alsdfgo</item>
-        <item> adsfgslo</item>
+        <item>Diabetes</item>
+        <item> Hypertension</item>
+        <item> Renal failure</item>
+        <item> Hepatic failure</item>
 
 
     </string-array>

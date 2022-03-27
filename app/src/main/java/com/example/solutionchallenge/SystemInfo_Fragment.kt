@@ -11,6 +11,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.solutionchallenge.adapter.Nutration_adapter
+import com.example.solutionchallenge.classes.Toast
 import com.example.solutionchallenge.classes.meal_details
 import com.example.solutionchallenge.databinding.ActivitySystemInfoBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -27,7 +28,7 @@ class SystemInfo_Fragment : Fragment() {
     private lateinit var database: DatabaseReference
     private lateinit var auth: FirebaseAuth
     lateinit var data: meal_details
-    lateinit var binding :ActivitySystemInfoBinding
+    lateinit var binding: ActivitySystemInfoBinding
 
 //    val data =
 //        listOf("1/ teaspoon ginger paste",
@@ -44,7 +45,7 @@ class SystemInfo_Fragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.activity_system_info, container, false)
         database = FirebaseDatabase.getInstance().reference
         auth = FirebaseAuth.getInstance()
@@ -71,19 +72,40 @@ class SystemInfo_Fragment : Fragment() {
 //
 //            )
 //        )
+        try {
 
-        binding.spinnerDisease.setOnItemSelectedListener(object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>?, view: View, position: Int, id: Long) {
 
-                var item: String = binding.spinnerDisease.getSelectedItem().toString()
-                if (item.equals("alo")){
-                    binding.txtItem.text = item
+            binding.spinnerDisease.setOnItemSelectedListener(object :
+                AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View,
+                    position: Int,
+                    id: Long
+                ) {
+
+                    var item: String = binding.spinnerDisease.getSelectedItem().toString()
+                    when(item){
+                        "none"-> binding.txtItem.text = item
+                        "Diabetes"-> binding.txtItem.text = item
+                        "Hypertension"-> binding.txtItem.text = item
+                        "Renal failure"-> binding.txtItem.text = item
+                        "Hepatic failure"-> binding.txtItem.text = item
+
+                    }
+
+
 
                 }
-            }
 
-            override fun onNothingSelected(parent: AdapterView<*>?) {}
-        })
+                override fun onNothingSelected(parent: AdapterView<*>?) {
+                    Toast(requireContext(), "error")
+                }
+            })
+        } catch (e: Exception) {
+            Toast(requireContext() , e.localizedMessage)
+
+        }
         binding.btnSubmitSystem.setOnClickListener {
             var bundle = Bundle()
 
@@ -91,9 +113,9 @@ class SystemInfo_Fragment : Fragment() {
 
             bundle.putInt("system_result", tall)
 
-            bundle.putString("spinner" , binding.txtItem.text.toString())
+            bundle.putString("spinner", binding.txtItem.text.toString())
 
-            Log.e( "onCreateView:1 ",bundle.toString() )
+            Log.e("onCreateView:1 ", bundle.toString())
             it.findNavController().navigate(R.id.systemResult_Activity, bundle)
 
             database.child("users").child(auth.uid.toString()).child("tall")
