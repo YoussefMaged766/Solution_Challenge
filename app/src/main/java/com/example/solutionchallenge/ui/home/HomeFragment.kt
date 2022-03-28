@@ -108,11 +108,7 @@ class HomeFragment : Fragment() {
 
         }
 
-        binding.btnAddMeals.setOnClickListener {
 
-            binding.recyclerMeals.smoothScrollToPosition(adapter_Nutration.itemCount - 1)
-
-        }
         binding.txtSeemoreMeals.setOnClickListener {
 
             val navHostFragment = activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_fragment_content_home) as NavHostFragment

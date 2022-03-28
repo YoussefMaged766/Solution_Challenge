@@ -87,29 +87,16 @@
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recycler_Nutration"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/btn_add_nutration"
                         app:layout_constraintTop_toBottomOf="@id/txt_Nutration"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                         android:orientation="horizontal"
+                        tools:listitem="@layout/nutration_item_list"
+                        android:layout_marginHorizontal="10dp"/>
 
-                        tools:listitem="@layout/nutration_item_list" />
-
-                    <com.google.android.material.floatingactionbutton.FloatingActionButton
-                        android:id="@+id/btn_add_nutration"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintTop_toTopOf="@id/recycler_Nutration"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintBottom_toBottomOf="@id/recycler_Nutration"
-                        android:backgroundTint="#fe8312"
-                        android:src="@drawable/ic_baseline_add_24"
-                        app:fabCustomSize="30sp"
-                        app:tint="@color/white"
-                        app:borderWidth="0dp" />
 
                     <TextView
                         android:id="@+id/txt_Exercises_result"
@@ -125,29 +112,17 @@
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recycler_Exercises"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/btn_add_nutration"
                         app:layout_constraintTop_toBottomOf="@id/txt_Exercises_result"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                         android:orientation="horizontal"
+                        tools:listitem="@layout/nutration_item_list"
+                        android:layout_marginHorizontal="10dp"/>
 
-                        tools:listitem="@layout/nutration_item_list" />
 
-                    <com.google.android.material.floatingactionbutton.FloatingActionButton
-                        android:id="@+id/btn_add_Exercises"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintTop_toTopOf="@id/recycler_Exercises"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintBottom_toBottomOf="@id/recycler_Exercises"
-                        android:backgroundTint="#fe8312"
-                        android:src="@drawable/ic_baseline_add_24"
-                        app:fabCustomSize="30sp"
-                        app:tint="@color/white"
-                        app:borderWidth="0dp" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btn_getStarted"
