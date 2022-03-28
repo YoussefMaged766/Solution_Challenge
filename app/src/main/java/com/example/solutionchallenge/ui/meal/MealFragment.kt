@@ -32,112 +32,25 @@ class MealFragment : Fragment() {
         data = meal_details()
         adapter_keto = Nutration_adapter(
             arrayListOf(
-                Nutration_data(
-                    "Grilled chicken",
-                    R.drawable.istockphoto6,
-                    details_adapter(data.data),
-                    "Ingredients",
-                    R.drawable.ic_baseline_access_time_24,
-                    "1h 10min",
-                    data.dir_data1,
-                    "Directions"
-                ),
-                Nutration_data(
-                    "Chicken & poultry",
-                    R.drawable.istockphoto3,
-                    details_adapter(data.data2),
-                    "Ingredients",
-                    R.drawable.ic_baseline_access_time_24,
-                    "40min",
-                    data.dir_data2,
-                    "Directions"
-                ),
-                Nutration_data(
-                    "High fat veggies",
-                    R.drawable.istockphoto5,
-                    details_adapter(data.data3),
-                    "Ingredients",
-                    R.drawable.ic_baseline_access_time_24,
-                    "1h",
-                    data.dir_data3,
-                    "Directions"
-
-                )
+                Nutration_data("Grilled chicken", R.drawable.istockphoto6, details_adapter(data.data), "Ingredients", R.drawable.ic_baseline_access_time_24, "1h 10min", data.dir_data1, "Directions"),
+                Nutration_data("Chicken & poultry", R.drawable.istockphoto3, details_adapter(data.data2), "Ingredients", R.drawable.ic_baseline_access_time_24, "40min", data.dir_data2, "Directions"),
+                Nutration_data("High fat veggies", R.drawable.istockphoto5, details_adapter(data.data3), "Ingredients", R.drawable.ic_baseline_access_time_24, "1h", data.dir_data3, "Directions")
 
             )
         )
 
         adapter_vegan = Nutration_adapter(
             arrayListOf(
-                Nutration_data(
-                    "Vegan salad bowl",
-                    R.drawable.istockphoto15,
-                    details_adapter(data.data4),
-                    "Ingredients",
-                    R.drawable.ic_baseline_access_time_24,
-                    "20min",
-                    data.dir_data4,
-                    "Directions"
-
-                ),
-                Nutration_data(
-                    "Fresh spring rolls ",
-                    R.drawable.istockphoto11,
-                    details_adapter(data.data5),
-                    "Ingredients",
-                    R.drawable.ic_baseline_access_time_24,
-                    "1h 10min",
-                    data.dir_data5,
-                    "Directions"
-                ),
-                Nutration_data(
-                    "Cooked rice with\n" + "   vegetables",
-                    R.drawable.istockphoto16,
-                    details_adapter(data.data6),
-                    "Ingredients",
-                    R.drawable.ic_baseline_access_time_24,
-                    "50min",
-                    data.dir_data6,
-                    "Directions"
-                )
-
+                Nutration_data("Vegan salad bowl", R.drawable.istockphoto15, details_adapter(data.data4), "Ingredients", R.drawable.ic_baseline_access_time_24, "20min", data.dir_data4, "Directions"),
+                Nutration_data("Fresh spring rolls ", R.drawable.istockphoto11, details_adapter(data.data5), "Ingredients", R.drawable.ic_baseline_access_time_24, "1h 10min", data.dir_data5, "Directions"),
+                Nutration_data("Cooked rice with\n" + "   vegetables", R.drawable.istockphoto16, details_adapter(data.data6), "Ingredients", R.drawable.ic_baseline_access_time_24, "50min", data.dir_data6, "Directions")
             )
         )
         adapter_Atkins = Nutration_adapter(
             arrayListOf(
-                Nutration_data(
-                    "Orange fillet\n" + "with brocoli",
-                    R.drawable.istockphoto12,
-                    details_adapter(data.data7),
-                     "Ingredients",
-                    R.drawable.ic_baseline_access_time_24,
-                    "35min",
-                    data.dir_data7,
-                    "Directions"
-                ),
-                Nutration_data(
-                    "Mushroom pasta ",
-                    R.drawable.istockphoto14,
-                    details_adapter(data.data8),
-                    "Ingredients",
-                    R.drawable.ic_baseline_access_time_24,
-                    "1h 10min",
-                    data.dir_data8,
-                    "Directions"
-
-                ),
-                Nutration_data(
-                    "Sauteed chicken",
-                    R.drawable.istockphoto13,
-                    details_adapter(data.data9),
-                     "Ingredients",
-                    R.drawable.ic_baseline_access_time_24,
-                    "1h 10min",
-                    data.dir_data9,
-                    "Directions"
-
-                )
-
+                Nutration_data("Orange fillet\n" + "with brocoli", R.drawable.istockphoto12, details_adapter(data.data7), "Ingredients", R.drawable.ic_baseline_access_time_24, "35min", data.dir_data7, "Directions"),
+                Nutration_data("Mushroom pasta ", R.drawable.istockphoto14, details_adapter(data.data8), "Ingredients", R.drawable.ic_baseline_access_time_24, "1h 10min", data.dir_data8, "Directions"),
+                Nutration_data("Sauteed chicken", R.drawable.istockphoto13, details_adapter(data.data9), "Ingredients", R.drawable.ic_baseline_access_time_24, "1h 10min", data.dir_data9, "Directions")
             )
         )
 

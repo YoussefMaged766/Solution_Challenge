@@ -2,6 +2,7 @@ package com.example.solutionchallenge
 
 import android.R.color
 import android.os.Bundle
+import android.text.TextUtils.isEmpty
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -93,9 +94,6 @@ class SystemInfo_Fragment : Fragment() {
                         "Hepatic failure"-> binding.txtItem.text = item
 
                     }
-
-
-
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -107,25 +105,55 @@ class SystemInfo_Fragment : Fragment() {
 
         }
         binding.btnSubmitSystem.setOnClickListener {
-            var bundle = Bundle()
 
-            var tall = Integer.parseInt(binding.tallEditSystem.text.toString())
+            try {
+                var tall = Integer.parseInt(binding.tallEditSystem.text.toString())
 
-            bundle.putInt("system_result", tall)
+                if (tall in 0..49){
+                    Toast(requireContext() , "Invalid Tall")
 
-            bundle.putString("spinner", binding.txtItem.text.toString())
+                }
+                else{
+                    var bundle = Bundle()
+                    bundle.putInt("system_result", tall)
+                    bundle.putString("spinner", binding.txtItem.text.toString())
 
-            Log.e("onCreateView:1 ", bundle.toString())
-            it.findNavController().navigate(R.id.systemResult_Activity, bundle)
+                    Log.e("onCreateView:1 ", bundle.toString())
+                    it.findNavController().navigate(R.id.systemResult_Activity, bundle)
 
-            database.child("users").child(auth.uid.toString()).child("tall")
-                .setValue(binding.tallEditSystem.text.toString())
-            database.child("users").child(auth.uid.toString()).child("weight")
-                .setValue(binding.weightEditSystem.text.toString())
+                    database.child("users").child(auth.uid.toString()).child("tall")
+                        .setValue(binding.tallEditSystem.text.toString())
+                    database.child("users").child(auth.uid.toString()).child("weight")
+                        .setValue(binding.weightEditSystem.text.toString())
+                }
+
+
+
+
+
+            }catch (e:Exception){
+                checkdata()
+                Toast(requireContext() , e.localizedMessage)
+
+            }
+
 
         }
 
         return binding.root
+    }
+
+    private fun checkdata() {
+        if (isEmpty(binding.tallEditSystem.toString())){
+            binding.tallEditSystem.error = "Enter your Tall"
+        }
+         if (isEmpty(binding.weightEditSystem.toString())){
+            binding.weightEditSystem.error = "Enter your Weight"
+
+        }
+        if (isEmpty(binding.ageEditSystem.toString())){
+            binding.ageEditSystem.error = "Enter your Age"
+        }
     }
 //    initialize()
 //
