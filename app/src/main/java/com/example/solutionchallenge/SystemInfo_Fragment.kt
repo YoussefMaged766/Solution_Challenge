@@ -125,6 +125,8 @@ class SystemInfo_Fragment : Fragment() {
                         .setValue(binding.tallEditSystem.text.toString())
                     database.child("users").child(auth.uid.toString()).child("weight")
                         .setValue(binding.weightEditSystem.text.toString())
+                    database.child("users").child(auth.uid.toString()).child("age")
+                        .setValue(binding.ageEditSystem.text.toString())
                 }
 
 

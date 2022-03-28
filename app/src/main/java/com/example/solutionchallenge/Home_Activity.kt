@@ -7,6 +7,7 @@ import android.content.SharedPreferences
 import android.graphics.Color
 import android.graphics.PorterDuff
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
@@ -172,6 +173,7 @@ class Home_Activity : AppCompatActivity() {
         }
 
 
+
 //        binding.navViewBot.setOnNavigationItemSelectedListener(navigationItemSelectedListener)
     }
 
@@ -191,8 +193,21 @@ class Home_Activity : AppCompatActivity() {
                 }
 
             })
+        Log.e( "onStart: ","start" )
     }
 
+    override fun onResume() {
+        super.onResume()
+        if (img_profile.drawable==null){
+            img_profile.setImageResource(R.drawable.profile_icon)
+
+        }
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.e( "onRestart: ","restart" )
+    }
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_home)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()

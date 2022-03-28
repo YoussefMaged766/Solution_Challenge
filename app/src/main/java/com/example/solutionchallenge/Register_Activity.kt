@@ -132,7 +132,10 @@ class Register_Activity : AppCompatActivity() {
         val name = txtname.text.toString()
         database.child("users").child(userId.toString()).child("email").setValue(txtemail.text.toString())
         database.child("users").child(userId.toString()).child("name").setValue(name)
-        database.child("users").child(userId.toString()).child("start_date").setValue("0")
+        database.child("users").child(userId.toString()).child("age").setValue("")
+        database.child("users").child(userId.toString()).child("tall").setValue("")
+        database.child("users").child(userId.toString()).child("weight").setValue("")
+
 
 
     }

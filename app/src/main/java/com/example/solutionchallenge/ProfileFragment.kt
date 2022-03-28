@@ -11,13 +11,10 @@ import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.app.ActivityCompat
 import androidx.core.content.PermissionChecker
 import androidx.databinding.DataBindingUtil
@@ -150,15 +147,16 @@ class ProfileFragment : Fragment() {
         }
 
 
-        var img = sharedPref.getString(PREFS_NAME, imageUri.toString())
+
 //        Glide.with(getApplicationContext()).load(img.toString()).into(image_profile)
 
-
+        var img = sharedPref.getString(PREFS_NAME, imageUri.toString())
         if (sharedPref.contains(PREFS_NAME)) {
             Picasso.with(requireContext()).load(img.toString()).into(binding.imageProfile)
         } else {
-            binding.imageProfile.setImageResource(R.drawable.ic_baseline_person_pin_24)
+            binding.imageProfile.setImageResource(R.drawable.profile_icon)
         }
+
 
 
         set_dialog(binding.textviewAge.text.toString(), binding.textviewAgeEdit)
@@ -171,7 +169,7 @@ class ProfileFragment : Fragment() {
         check_data()
 
 
-
+setHasOptionsMenu(true)
 
 
 
@@ -183,6 +181,65 @@ class ProfileFragment : Fragment() {
         return binding.root
 
     }
+
+    override fun onStart() {
+        super.onStart()
+        if (binding.imageProfile.drawable == null){
+            binding.imageProfile.setImageResource(R.drawable.ic_baseline_person_pin_24)
+            Log.e( "onResume: ","start" )
+        }
+    }
+
+
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.optional_menu,menu)
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.remove -> {
+                val builder: AlertDialog.Builder = AlertDialog.Builder(requireContext())
+                builder.setTitle("Remove profile photo?")
+                builder.setPositiveButton("REMOVE" , object :DialogInterface.OnClickListener{
+                    override fun onClick(dialog: DialogInterface?, which: Int) {
+                        database.child("users").child(auth.uid.toString()).child("imagelink").removeValue()
+                        sharedPref = requireActivity().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+                        sharedPref.edit().remove(PREFS_NAME).apply()
+                        binding.imageProfile.setImageResource(R.drawable.profile_icon)
+                        val i = Intent(requireActivity(), Home_Activity::class.java)
+                        activity?.finish()
+                        activity?. overridePendingTransition(0, 0)
+                        startActivity(i)
+                        activity?.overridePendingTransition(0, 0)
+
+                    }
+
+                })
+                builder.setNegativeButton("CANCEL", object :DialogInterface.OnClickListener{
+                    override fun onClick(dialog: DialogInterface?, which: Int) {
+
+                    }
+
+                })
+
+                val dialog = builder.create()
+                dialog.show()
+
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+
+
+
+
+
+
+
+
 
 
     fun set_dialog(title: String, data: TextView) {
@@ -249,6 +306,7 @@ class ProfileFragment : Fragment() {
                 .setValue(imageUri.toString())
 
         }
+
 
     }
 
