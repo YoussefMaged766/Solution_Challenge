@@ -132,8 +132,8 @@ class SystemInfo_Fragment : Fragment() {
 
 
             }catch (e:Exception){
-//                checkdata()
-                Toast(requireContext() , "Fill Empty Fields")
+                checkdata()
+                Toast(requireContext() , e.localizedMessage)
 
             }
 
