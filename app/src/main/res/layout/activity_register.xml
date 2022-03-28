@@ -70,79 +70,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/view" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_google"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="25dp"
-                    android:layout_marginEnd="10dp"
-                    android:backgroundTint="@color/white"
-                    android:drawableLeft="@drawable/google_icon2"
-                    android:fontFamily="@font/tahoma_regular"
-                    android:text="@string/google"
-                    android:textAllCaps="false"
-                    android:textColor="@color/black_border"
-                    android:textSize="10sp"
-                    app:layout_constraintBottom_toTopOf="@id/txt_or"
-                    app:layout_constraintEnd_toStartOf="@+id/btn_facebook"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/create_account"
-                    app:strokeColor="@color/black_border" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_facebook"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:backgroundTint="@color/white"
-                    android:drawableLeft="@drawable/facebook_icon2"
-                    android:fontFamily="@font/tahoma_regular"
-                    android:text="@string/facebook"
-                    android:textAllCaps="false"
-                    android:textColor="@color/black_border"
-                    android:textSize="10sp"
-                    app:layout_constraintBottom_toTopOf="@id/txt_or"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/btn_google"
-                    app:layout_constraintTop_toBottomOf="@id/create_account"
-                    app:strokeColor="@color/black_border" />
-
-                <View
-                    android:id="@+id/view1"
-                    android:layout_width="70dp"
-                    android:layout_height="1dp"
-                    android:background="@color/black_border"
-                    app:layout_constraintBottom_toTopOf="@id/txt_container_name"
-                    app:layout_constraintEnd_toStartOf="@+id/txt_or"
-                    app:layout_constraintTop_toBottomOf="@+id/btn_google" />
-
-                <TextView
-                    android:id="@+id/txt_or"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:fontFamily="@font/tahoma_regular"
-                    android:text="@string/or"
-                    android:textColor="@color/black"
-                    android:textSize="15sp"
-                    app:layout_constraintBottom_toTopOf="@id/txt_container_name"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/btn_google" />
-
-                <View
-                    android:id="@+id/view2"
-                    android:layout_width="70dp"
-                    android:layout_height="1dp"
-
-                    android:background="@color/black_border"
-                    app:layout_constraintBottom_toTopOf="@id/txt_container_name"
-                    app:layout_constraintStart_toEndOf="@+id/txt_or"
-                    app:layout_constraintTop_toBottomOf="@id/btn_google" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/txt_container_name"
@@ -154,9 +82,9 @@
                     app:boxStrokeColor="@color/intro_color"
                     app:endIconMode="clear_text"
                     app:hintTextColor="@color/intro_color"
-                    app:layout_constraintEnd_toEndOf="@id/btn_facebook"
-                    app:layout_constraintStart_toStartOf="@id/btn_google"
-                    app:layout_constraintTop_toBottomOf="@id/txt_or"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/create_account"
 
                     >
 
@@ -180,8 +108,8 @@
                     app:boxStrokeColor="@color/intro_color"
                     app:endIconMode="clear_text"
                     app:hintTextColor="@color/intro_color"
-                    app:layout_constraintEnd_toEndOf="@id/btn_facebook"
-                    app:layout_constraintStart_toStartOf="@id/btn_google"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/txt_container_name">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -204,8 +132,8 @@
                     app:boxStrokeColor="@color/intro_color"
                     app:endIconMode="password_toggle"
                     app:hintTextColor="@color/intro_color"
-                    app:layout_constraintEnd_toEndOf="@id/btn_facebook"
-                    app:layout_constraintStart_toStartOf="@id/btn_google"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tct_container_email"
 
                     >
@@ -230,7 +158,7 @@
                     android:textColor="@color/black"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="@id/btn_facebook"
+                    app:layout_constraintEnd_toEndOf="@id/txt_container_password"
                     app:layout_constraintTop_toBottomOf="@id/txt_container_password" />
 
                 <com.google.android.material.button.MaterialButton

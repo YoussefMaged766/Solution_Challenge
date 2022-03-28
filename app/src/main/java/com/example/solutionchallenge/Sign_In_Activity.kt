@@ -79,7 +79,7 @@ class Sign_In_Activity : AppCompatActivity() {
     fun check_data(){
         if (isEmpty(binding.txtEmailSign.toString())){
           binding.txtContainerEmail.boxStrokeColor = getColor(R.color.red)
-            binding.txtEmailSign.setError("Enter your Email")
+            binding.txtEmailSign.error = "Enter your Email"
         }
         if (isEmpty(binding.txtPasswordSign.toString())){
             binding.txtContainerPassword.boxStrokeColor = getColor(R.color.red)

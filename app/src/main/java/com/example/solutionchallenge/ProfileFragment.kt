@@ -258,7 +258,8 @@ class ProfileFragment : Fragment() {
             binding.textviewTallEdit.text = ""
             binding.textviewWeightEdit.text = ""
             binding.textviewAccountEdit.text = ""
-        } else if (auth.uid != null) {
+        }
+        if (auth.uid != null) {
             database.child("users").child(auth.uid.toString()).child("tall")
                 .addListenerForSingleValueEvent(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
