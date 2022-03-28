@@ -293,6 +293,17 @@ class ProfileFragment : Fragment() {
                     }
 
                 })
+            database.child("users").child(auth.uid.toString()).child("age")
+                .addListenerForSingleValueEvent(object : ValueEventListener {
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        binding.textviewAgeEdit.text = snapshot.value.toString()
+                    }
+
+                    override fun onCancelled(error: DatabaseError) {
+
+                    }
+
+                })
         } else {
             database.child("users").child(auth.uid.toString()).child("start_date")
                 .addListenerForSingleValueEvent(object : ValueEventListener {

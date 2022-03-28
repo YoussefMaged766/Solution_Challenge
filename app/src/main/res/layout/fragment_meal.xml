@@ -49,48 +49,21 @@
             app:layout_constraintTop_toBottomOf="@id/txt_meal" />
 
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/btn_add_meals_left"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#fff"
-            android:src="@drawable/ic_arrow_left_24"
-            app:borderWidth="0dp"
-            app:elevation="0dp"
-            app:fabCustomSize="30sp"
-            app:layout_constraintBottom_toBottomOf="@id/recycler_ketodiet"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/recycler_ketodiet"
-            app:layout_constraintEnd_toStartOf="@id/recycler_ketodiet"
-            app:tint="@color/black" />
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_ketodiet"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintEnd_toStartOf="@id/btn_add_meals"
-            app:layout_constraintStart_toEndOf="@id/btn_add_meals_left"
             app:layout_constraintTop_toBottomOf="@id/txt_ketodiet"
             tools:listitem="@layout/nutration_item_list"
-
+            android:layout_marginHorizontal="10dp"
             />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/btn_add_meals"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#fff"
-            android:src="@drawable/ic_arrow_right_24"
-            app:borderWidth="0dp"
-            app:elevation="0dp"
-            app:fabCustomSize="30sp"
-            app:layout_constraintBottom_toBottomOf="@id/recycler_ketodiet"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/recycler_ketodiet"
-            app:tint="@color/black" />
+
 
         <TextView
             android:id="@+id/txt_Vegan_diet"
@@ -105,48 +78,21 @@
             app:layout_constraintTop_toBottomOf="@id/recycler_ketodiet" />
 
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/btn_add_Exercises_left"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#fff"
-            android:src="@drawable/ic_arrow_left_24"
-            app:borderWidth="0dp"
-            app:elevation="0dp"
-            app:fabCustomSize="30sp"
-            app:layout_constraintBottom_toBottomOf="@id/recycler_Atkins_diet"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/recycler_Atkins_diet"
-            app:layout_constraintEnd_toStartOf="@id/recycler_Atkins_diet"
-            app:tint="@color/black" />
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_Atkins_diet"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/btn_add_meals"
-            app:layout_constraintStart_toEndOf="@id/btn_add_Exercises_left"
             app:layout_constraintTop_toBottomOf="@id/txt_Vegan_diet"
-            tools:listitem="@layout/nutration_item_list" />
+            tools:listitem="@layout/nutration_item_list"
+            android:layout_marginHorizontal="10dp"/>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/btn_add_Atkins"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#fff"
-            android:src="@drawable/ic_arrow_right_24"
-            app:borderWidth="0dp"
-            app:elevation="0dp"
-            app:fabCustomSize="30sp"
-            app:layout_constraintBottom_toBottomOf="@id/recycler_Atkins_diet"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/recycler_Atkins_diet"
 
-            app:tint="@color/black" />
 
         <TextView
             android:id="@+id/txt_Atkins_diet"
@@ -161,48 +107,21 @@
             app:layout_constraintTop_toBottomOf="@id/recycler_Atkins_diet" />
 
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/btn_add_atkins_left"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#fff"
-            android:src="@drawable/ic_arrow_left_24"
-            app:borderWidth="0dp"
-            app:elevation="0dp"
-            app:fabCustomSize="30sp"
-            app:layout_constraintBottom_toBottomOf="@id/recycler_Vegan_diet"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/recycler_Vegan_diet"
-            app:layout_constraintEnd_toStartOf="@id/recycler_Vegan_diet"
-            app:tint="@color/black" />
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_Vegan_diet"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/btn_add_meals"
-            app:layout_constraintStart_toEndOf="@id/btn_add_Exercises_left"
             app:layout_constraintTop_toBottomOf="@id/txt_Atkins_diet"
-            tools:listitem="@layout/nutration_item_list" />
+            tools:listitem="@layout/nutration_item_list"
+            android:layout_marginHorizontal="10dp"/>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/btn_add_Exercises"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#fff"
-            android:src="@drawable/ic_arrow_right_24"
-            app:borderWidth="0dp"
-            app:elevation="0dp"
-            app:fabCustomSize="30sp"
-            app:layout_constraintBottom_toBottomOf="@id/recycler_Vegan_diet"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/recycler_Vegan_diet"
 
-            app:tint="@color/black" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
