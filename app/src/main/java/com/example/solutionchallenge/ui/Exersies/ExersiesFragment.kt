@@ -34,8 +34,8 @@ class ExersiesFragment : Fragment() {
 data = meal_details()
         adapter_home = Nutration_adapter(
             arrayListOf(
-                Nutration_data("Side planks", R.drawable.istockphoto2, details_adapter(data.data),"Steps",0),
-                Nutration_data("Squats ", R.drawable.istockphoto4,details_adapter(data.data2),"Steps",0),
+                Nutration_data("Side planks", R.drawable.istockphoto2, details_adapter(data.ex_data1),"Steps",0),
+                Nutration_data("Squats ", R.drawable.istockphoto4,details_adapter(data.ex_data2),"Steps",0),
                 Nutration_data("Push ups", R.drawable.istockphoto7,details_adapter(data.ex_data3),"Steps",0)
             )
         )
