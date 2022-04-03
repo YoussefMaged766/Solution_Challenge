@@ -74,6 +74,7 @@ class bottom_sheet_fragment : BottomSheetDialogFragment() {
 
         binding.txtNameSheet.text = user.name
         binding.itemImgSheet.setImageResource(user.img)
+        user.img_gif?.let { binding.itemImgSheetGif.setImageResource(it) }
         binding.recyclerDetails.adapter = user.details
         binding.txtIntegrate.text = user.title
         binding.txtTime.text = user.time

@@ -25,7 +25,7 @@
                 android:layout_height="match_parent">
 
 
-                <ImageView
+                <pl.droidsonroids.gif.GifImageView
                     android:id="@+id/item_img_sheet"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
@@ -33,6 +33,16 @@
                     android:scaleType="centerCrop"
                     android:textSize="30sp"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <pl.droidsonroids.gif.GifImageView
+                    android:id="@+id/item_img_sheet_gif"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:textSize="30sp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/btn_collabse"
                     android:layout_width="wrap_content"

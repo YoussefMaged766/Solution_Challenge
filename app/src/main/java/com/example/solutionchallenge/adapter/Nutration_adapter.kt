@@ -38,7 +38,7 @@ class Nutration_adapter(var items: ArrayList<Nutration_data>) :
 
     override fun onBindViewHolder(holder: viewholder, position: Int) {
         holder.bind(items[position])
-        holder.img.setOnClickListener {
+        holder.itemView.setOnClickListener {
 
             send_data(items[position], it)
 

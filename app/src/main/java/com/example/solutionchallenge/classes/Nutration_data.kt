@@ -12,7 +12,7 @@ data class Nutration_data(
     var img_time:Int,
     var time: String?=null,
     var txt_direction:String?=null,
-    var dir:String?=null
-
+    var dir:String?=null,
+    var img_gif :Int?=null
 ) : Serializable
 

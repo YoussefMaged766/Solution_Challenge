@@ -107,9 +107,9 @@ class SystemResult_fragment : Fragment() {
 
                     var myObject: Nutration_adapter = Nutration_adapter(
                         arrayListOf(
-                            Nutration_data("Side planks", R.drawable.istockphoto2, details_adapter(data.ex_data1), "Steps", 0),
-                            Nutration_data("Push ups", R.drawable.istockphoto7, details_adapter(data.ex_data3), "Steps", 0),
-                            Nutration_data("Dumble", R.drawable.istockphoto10,details_adapter(data.ex_data6),"Steps",0)
+                            Nutration_data("Side planks", R.drawable.istockphoto2, details_adapter(data.ex_data1), "Steps", 0,null,null,null,R.drawable.gif1),
+                            Nutration_data("Push ups", R.drawable.istockphoto7, details_adapter(data.ex_data3), "Steps", 0,null,null,null,R.drawable.gif3),
+                            Nutration_data("Dumble", R.drawable.istockphoto10,details_adapter(data.ex_data6),"Steps",0,null,null,null,R.drawable.gif6)
                         )
                     )
                     var myObject1: Nutration_adapter = Nutration_adapter(
@@ -139,9 +139,9 @@ class SystemResult_fragment : Fragment() {
                     )
                     var myObject: Nutration_adapter = Nutration_adapter(
                         arrayListOf(
-                            Nutration_data("Side planks", R.drawable.istockphoto2, details_adapter(data.ex_data1), "Steps", 0),
-                            Nutration_data("Push ups", R.drawable.istockphoto7, details_adapter(data.ex_data3), "Steps", 0),
-                            Nutration_data("Dumble", R.drawable.istockphoto10,details_adapter(data.ex_data6),"Steps",0)
+                            Nutration_data("Side planks", R.drawable.istockphoto2, details_adapter(data.ex_data1), "Steps", 0,null,null,null,R.drawable.gif1),
+                            Nutration_data("Push ups", R.drawable.istockphoto7, details_adapter(data.ex_data3), "Steps", 0,null,null,null,R.drawable.gif3),
+                            Nutration_data("Dumble", R.drawable.istockphoto10,details_adapter(data.ex_data6),"Steps",0,null,null,null,R.drawable.gif6)
                         )
                     )
 
@@ -161,9 +161,9 @@ class SystemResult_fragment : Fragment() {
 
                     var myObject: Nutration_adapter = Nutration_adapter(
                         arrayListOf(
-                            Nutration_data("Bicycle ", R.drawable.istockphoto9,details_adapter(data.ex_data5),"Steps",0),
-                            Nutration_data("Side planks", R.drawable.istockphoto2, details_adapter(data.data),"Steps",0),
-                            Nutration_data("Dumble", R.drawable.istockphoto10,details_adapter(data.ex_data6),"Steps",0)
+                            Nutration_data("Bicycle ", R.drawable.istockphoto9,details_adapter(data.ex_data5),"Steps",0,null,null,null,R.drawable.gif5),
+                            Nutration_data("Side planks", R.drawable.istockphoto2, details_adapter(data.data),"Steps",0,null,null,null,R.drawable.gif1),
+                            Nutration_data("Dumble", R.drawable.istockphoto10,details_adapter(data.ex_data6),"Steps",0,null,null,null,R.drawable.gif6)
                         )
                     )
                     var myObject1: Nutration_adapter = Nutration_adapter(
@@ -193,9 +193,9 @@ class SystemResult_fragment : Fragment() {
                     )
                     var myObject: Nutration_adapter = Nutration_adapter(
                         arrayListOf(
-                            Nutration_data("Squats ", R.drawable.istockphoto4,details_adapter(data.data2),"Steps",0),
-                            Nutration_data("Bicycle ", R.drawable.istockphoto9,details_adapter(data.ex_data5),"Steps",0),
-                            Nutration_data("Dumble", R.drawable.istockphoto10,details_adapter(data.ex_data6),"Steps",0)
+                            Nutration_data("Squats ", R.drawable.istockphoto4,details_adapter(data.data2),"Steps",0,null,null,null,R.drawable.gif2),
+                            Nutration_data("Bicycle ", R.drawable.istockphoto9,details_adapter(data.ex_data5),"Steps",0,null,null,null,R.drawable.gif5),
+                            Nutration_data("Dumble", R.drawable.istockphoto10,details_adapter(data.ex_data6),"Steps",0,null,null,null,R.drawable.gif6)
                         )
                     )
 
@@ -215,9 +215,9 @@ class SystemResult_fragment : Fragment() {
 
                     var myObject: Nutration_adapter = Nutration_adapter(
                         arrayListOf(
-                            Nutration_data("Side planks", R.drawable.istockphoto2, details_adapter(data.ex_data1), "Steps", 0),
-                            Nutration_data("Cardio", R.drawable.istockphoto8,details_adapter(data.ex_data4),"Steps",0),
-                            Nutration_data("Dumble", R.drawable.istockphoto10,details_adapter(data.ex_data6),"Steps",0)
+                            Nutration_data("Side planks", R.drawable.istockphoto2, details_adapter(data.ex_data1), "Steps", 0,null,null,null,R.drawable.gif1),
+                            Nutration_data("Cardio", R.drawable.istockphoto8,details_adapter(data.ex_data4),"Steps",0,null,null,null,R.drawable.gif4),
+                            Nutration_data("Dumble", R.drawable.istockphoto10,details_adapter(data.ex_data6),"Steps",0,null,null,null,R.drawable.gif6)
                         )
                     )
                     var myObject1: Nutration_adapter = Nutration_adapter(
@@ -247,9 +247,9 @@ class SystemResult_fragment : Fragment() {
                     )
                     var myObject: Nutration_adapter = Nutration_adapter(
                         arrayListOf(
-                            Nutration_data("Side planks", R.drawable.istockphoto2, details_adapter(data.ex_data1), "Steps", 0),
-                            Nutration_data("Bicycle ", R.drawable.istockphoto9,details_adapter(data.ex_data5),"Steps",0),
-                            Nutration_data("Dumble", R.drawable.istockphoto10,details_adapter(data.ex_data6),"Steps",0)
+                            Nutration_data("Side planks", R.drawable.istockphoto2, details_adapter(data.ex_data1), "Steps", 0,null,null,null,R.drawable.gif1),
+                            Nutration_data("Bicycle ", R.drawable.istockphoto9,details_adapter(data.ex_data5),"Steps",0,null,null,null,R.drawable.gif5),
+                            Nutration_data("Dumble", R.drawable.istockphoto10,details_adapter(data.ex_data6),"Steps",0,null,null,null,R.drawable.gif6)
                         )
                     )
 
@@ -269,9 +269,9 @@ class SystemResult_fragment : Fragment() {
 
                     var myObject: Nutration_adapter = Nutration_adapter(
                         arrayListOf(
-                            Nutration_data("Side planks", R.drawable.istockphoto2, details_adapter(data.ex_data1), "Steps", 0),
-                            Nutration_data("Squats ", R.drawable.istockphoto4,details_adapter(data.data2),"Steps",0),
-                            Nutration_data("Cardio", R.drawable.istockphoto8,details_adapter(data.ex_data4),"Steps",0)
+                            Nutration_data("Side planks", R.drawable.istockphoto2, details_adapter(data.ex_data1), "Steps", 0,null,null,null,R.drawable.gif1),
+                            Nutration_data("Squats ", R.drawable.istockphoto4,details_adapter(data.data2),"Steps",0,null,null,null,R.drawable.gif2),
+                            Nutration_data("Cardio", R.drawable.istockphoto8,details_adapter(data.ex_data4),"Steps",0,null,null,null,R.drawable.gif4)
                         )
                     )
                     var myObject1: Nutration_adapter = Nutration_adapter(
@@ -301,9 +301,9 @@ class SystemResult_fragment : Fragment() {
                     )
                     var myObject: Nutration_adapter = Nutration_adapter(
                         arrayListOf(
-                            Nutration_data("Squats ", R.drawable.istockphoto4,details_adapter(data.data2),"Steps",0),
-                            Nutration_data("Push ups", R.drawable.istockphoto7, details_adapter(data.ex_data3), "Steps", 0),
-                            Nutration_data("Bicycle ", R.drawable.istockphoto9,details_adapter(data.ex_data5),"Steps",0)
+                            Nutration_data("Squats ", R.drawable.istockphoto4,details_adapter(data.data2),"Steps",0,null,null,null,R.drawable.gif2),
+                            Nutration_data("Push ups", R.drawable.istockphoto7, details_adapter(data.ex_data3), "Steps", 0,null,null,null,R.drawable.gif3),
+                            Nutration_data("Bicycle ", R.drawable.istockphoto9,details_adapter(data.ex_data5),"Steps",0,null,null,null,R.drawable.gif5)
                         )
                     )
 
@@ -327,9 +327,9 @@ class SystemResult_fragment : Fragment() {
             )
             var myObject: Nutration_adapter = Nutration_adapter(
                 arrayListOf(
-                    Nutration_data("Side planks", R.drawable.istockphoto2, details_adapter(data.data),"Steps",0),
-                    Nutration_data("Squats ", R.drawable.istockphoto4,details_adapter(data.data2),"Steps",0),
-                    Nutration_data("Push ups", R.drawable.istockphoto7,details_adapter(data.ex_data3),"Steps",0)
+                    Nutration_data("Side planks", R.drawable.istockphoto2, details_adapter(data.data),"Steps",0,null,null,null,R.drawable.gif1),
+                    Nutration_data("Squats ", R.drawable.istockphoto4,details_adapter(data.data2),"Steps",0,null,null,null,R.drawable.gif2),
+                    Nutration_data("Push ups", R.drawable.istockphoto7,details_adapter(data.ex_data3),"Steps",0,null,null,null,R.drawable.gif3)
                 )
             )
 
